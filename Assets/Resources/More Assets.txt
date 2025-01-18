@@ -1,0 +1,58 @@
+FROM UNITY
+
+Lowpoly Piece of Nature
+https://assetstore.unity.com/packages/3d/environments/fantasy/a-piece-of-nature-40538
+
+Fantasy Forest Environment
+https://assetstore.unity.com/packages/3d/environments/fantasy/fantasy-forest-environment-free-demo-35361
+
+Hand painted wooden crate
+https://assetstore.unity.com/packages/3d/hand-painted-wooden-crate-36854
+
+Lowpoly Wells
+https://assetstore.unity.com/packages/3d/props/exterior/lowpoly-wells-68437
+
+Wooden Cart
+https://assetstore.unity.com/packages/3d/environments/fantasy/wooden-cart-65835
+
+Medieval Gold
+https://assetstore.unity.com/packages/3d/props/medieval-gold-14162
+
+Stylized Environnement - Free Pack
+https://assetstore.unity.com/packages/3d/environments/fantasy/stylized-environnement-free-pack-178090
+
+Stylized Hand Painted Dungeon (Free)
+https://assetstore.unity.com/packages/3d/environments/stylized-hand-painted-dungeon-free-173934
+
+TGU Skybox Pack
+https://assetstore.unity.com/packages/2d/textures-materials/sky/tgu-skybox-pack-96433
+
+Toon Forest Free Set
+https://assetstore.unity.com/packages/3d/vegetation/toon-forest-free-set-66124
+
+Handpainted Forest Pack Lite
+https://assetstore.unity.com/packages/3d/environments/landscapes/handpainted-forest-pack-lite-176577
+
+Stylized Rocks with Magic Rune
+https://assetstore.unity.com/packages/3d/props/stylized-rocks-with-magic-rune-192933
+
+Ancient Ruins and Plants
+https://assetstore.unity.com/packages/3d/props/exterior/ancient-ruins-and-plants-201914
+
+Toon Crystals Pack
+https://assetstore.unity.com/packages/3d/props/toon-crystals-pack-66182
+
+Handpainted Turntable Platforms
+https://assetstore.unity.com/packages/3d/props/handpainted-turntable-platforms-66599
+
+FREE Stylized PBR Textures Pack
+https://assetstore.unity.com/packages/2d/textures-materials/free-stylized-pbr-textures-pack-111778
+
+Hand Painted Textures
+https://assetstore.unity.com/packages/2d/textures-materials/hand-painted-textures-31347
+
+Fantasy landscape
+https://assetstore.unity.com/packages/3d/environments/fantasy-landscape-103573
+
+Hand Painted Stone Textures
+https://assetstore.unity.com/packages/2d/textures-materials/stone/hand-painted-stone-textures-28645
