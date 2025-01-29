@@ -7,6 +7,9 @@ public class CameraController : MonoBehaviour
     [Header("Move")]
     [SerializeField] private float moveSpeed;
 
+    [Header("Zoom")]
+    [SerializeField] private float zoomModifier;
+
     [SerializeField] private Transform corner1;
     [SerializeField] private Transform corner2;
 
@@ -33,6 +36,8 @@ public class CameraController : MonoBehaviour
     {
 
         MoveByKB();
+        Zoom();
+        MoveByMouse();
     }
 
     private void MoveByKB()
@@ -53,6 +58,24 @@ public class CameraController : MonoBehaviour
                                   Mathf.Clamp(transform.position.z, lowerLeft.z, topRight.z));
 
         return pos;
+    }
+
+    private void Zoom()
+    {
+        zoomModifier = Input.GetAxis("Mouse ScrollWheel");
+        if (Input.GetKey(KeyCode.Z))
+            zoomModifier = -0.1f;
+        if (Input.GetKey(KeyCode.X))
+            zoomModifier = 0.1f;
+
+        cam.orthographicSize += zoomModifier;
+        cam.orthographicSize = Mathf.Clamp(cam.orthographicSize, 4, 10);
+    }
+
+    private void MoveByMouse()
+    {
+        if (Input.mousePosition.x >= Screen.width)
+            transform.Translate(Vector3.right * moveSpeed * Time.deltaTime, Space.World);
     }
 
 }
