@@ -27,12 +27,32 @@ public class LeftClick : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetMouseButtonDown(0))
+        {
+            TrySelect(Input.mousePosition);
+        }
     }
 
     private void SelectCharacter(RaycastHit hit)
     {
         curChar = hit.collider.GetComponent<Character>();
         Debug.Log("Selest Char: " + hit.collider.gameObject);
+    }
+
+    private void TrySelect(Vector2 screenPos)
+    {
+        Ray ray = cam.ScreenPointToRay(screenPos);
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out  hit, 1000,layerMask))
+        {
+            switch (hit.collider.tag)
+            {
+                case "Player":
+                case "Hero":
+                    SelectCharacter(hit);
+                    break;
+            }
+        }
     }
 }
