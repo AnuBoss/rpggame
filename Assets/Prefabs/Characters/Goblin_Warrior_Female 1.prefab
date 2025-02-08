@@ -3222,7 +3222,7 @@ GameObject:
   - component: {fileID: 4466931758682961415}
   - component: {fileID: 2064779006401576677}
   - component: {fileID: -7601338115266042180}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Goblin_Warrior_Female 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
