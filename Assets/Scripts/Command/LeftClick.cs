@@ -1,3 +1,4 @@
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class LeftClick : MonoBehaviour
@@ -5,13 +6,10 @@ public class LeftClick : MonoBehaviour
     public static LeftClick instance;
 
     private Camera cam;
-
     [SerializeField] 
-    private Character curChar;
+    private Character curChar; 
     public Character CurChar
-    {
-        get { return curChar; }
-    }
+    { get { return curChar; } }
 
     [SerializeField] 
     private LayerMask layerMask;
@@ -20,14 +18,14 @@ public class LeftClick : MonoBehaviour
     void Start()
     {
         instance = this;
-        cam =Camera.main;
+        cam = Camera.main;
         layerMask = LayerMask.GetMask("Ground", "Character", "Building", "Item");
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonUp(0))
         {
             TrySelect(Input.mousePosition);
         }

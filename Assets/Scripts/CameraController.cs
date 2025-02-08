@@ -37,7 +37,7 @@ public class CameraController : MonoBehaviour
 
         MoveByKB();
         Zoom();
-        MoveByMouse();
+        //MoveByMouse();
     }
 
     private void MoveByKB()
