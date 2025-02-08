@@ -21,6 +21,8 @@ public abstract class Character : MonoBehaviour
     [SerializeField]
     protected CharState state;
     public CharState State { get { return state; } }
+    
+    
 
     void Awake()
     {
