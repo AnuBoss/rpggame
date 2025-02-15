@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6900948150650273093}
   - component: {fileID: 7652380723826810077}
   - component: {fileID: 2175807076351003732}
+  - component: {fileID: 5596946551743095058}
   m_Layer: 0
   m_Name: DoubleCircle Select 1
   m_TagString: Untagged
@@ -4900,3 +4901,16 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &5596946551743095058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6044037666520248651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e257676b3f48c42419afb2b6ff2ce3db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeTime: 1
