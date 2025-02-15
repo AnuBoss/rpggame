@@ -38,10 +38,23 @@ public abstract class Character : MonoBehaviour
     }
 
     [SerializeField] protected Character curCharTarget;
+    public Character CurCharTarget
+    {
+        get { return curCharTarget; }
+    }
     [SerializeField] protected float attackRange = 2f;
+    public float AttackRange
+    {
+        get { return attackRange; }
+    }
     [SerializeField] protected int attackDamage = 3;
     [SerializeField] protected float attackCoolDown = 2f;
     [SerializeField] protected float attackTimer = 0f;
+    [SerializeField] protected float findingRange = 20f;
+    public float FindingRange
+    {
+        get { return findingRange; }
+    }
     
     void Awake()
     {
@@ -190,6 +203,22 @@ public abstract class Character : MonoBehaviour
         {
             target.ReceiveDamage(this);
         }
+    }
+
+    public bool IsMyEnemy(string TargetTag)
+    {
+        string myTag = gameObject.tag;
+        if ((myTag == "Hero"|| myTag == "Player") && TargetTag == "Enemy")
+        {
+            return true;
+        }
+
+        if (myTag == "Enemy" && (TargetTag == "Hero" || TargetTag == "Player"))
+        {
+            return true;
+        }
+
+        return false;
     }
 
 }
