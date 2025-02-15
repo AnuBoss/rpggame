@@ -38,6 +38,7 @@ public class RightClick : MonoBehaviour
         {
             c.WalkToPosition(hit.point);
         }
+        CreateVFX(hit.point,VFXManager.instance.DoubleRingMarker);
     }
 
     private void TryCommand(Vector2 screenPos)
@@ -55,4 +56,16 @@ public class RightClick : MonoBehaviour
             }
         }
     }
+
+    private void CreateVFX(Vector3 pos, GameObject vfxPrefab)
+    {
+        if (vfxPrefab == null)
+        {
+            return;
+        }
+
+        Instantiate(vfxPrefab, pos + new Vector3(0f, 0.1f, 0f), Quaternion.identity);
+    }
+
+    
 }
