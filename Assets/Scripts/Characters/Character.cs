@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -38,7 +39,7 @@ public abstract class Character : MonoBehaviour
 
     [SerializeField] protected Character curCharTarget;
     [SerializeField] protected float attackRange = 2f;
-
+    [SerializeField] protected int attackDamage = 3;
     [SerializeField] protected float attackCoolDown = 2f;
     [SerializeField] protected float attackTimer = 0f;
     
@@ -123,6 +124,7 @@ public abstract class Character : MonoBehaviour
         transform.LookAt(curCharTarget.transform);
         anim.SetTrigger("Attack");
         //Attack logic
+        AttackLogic();
     }
 
     protected void AttackUpdate()
@@ -148,6 +150,46 @@ public abstract class Character : MonoBehaviour
             SetState(CharState.WalkToEnemy);
         }
     }
-    
+
+    protected virtual IEnumerator DestroyObject()
+    {
+        yield return new WaitForSeconds(5f);
+        Destroy(gameObject);
+    }
+
+    protected virtual void Die()
+    {
+        navAgent.isStopped = true;
+        SetState(CharState.Die);
+        
+        anim.SetTrigger("Die");
+
+        StartCoroutine(DestroyObject());
+    }
+
+    public void ReceiveDamage(Character enemy)
+    {
+        if (curHp <= 0 || state == CharState.Die)
+        {
+           return; 
+        }
+
+        curHp -= enemy.attackDamage;
+        if (curHp <= 0)
+        {
+            curHp = 0;
+            Die();
+        }
+    }
+
+    protected void AttackLogic()
+    {
+        Character target = curCharTarget.GetComponent<Character>();
+
+        if (target != null)
+        {
+            target.ReceiveDamage(this);
+        }
+    }
 
 }
