@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 7652380723826810077}
   - component: {fileID: 2175807076351003732}
   - component: {fileID: 5596946551743095058}
-  - component: {fileID: 9223358787813392005}
   m_Layer: 0
   m_Name: DoubleCircle Select 1
   m_TagString: Untagged
@@ -225,7 +224,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.34539366, g: 0.8584906, b: 0.2713154, a: 1}
+      maxColor: {r: 0.14208792, g: 0.61716396, b: 0.9716981, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -4915,15 +4914,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifeTime: 1
---- !u!114 &9223358787813392005
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6044037666520248651}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb133f8fc235e1b478dd470b8ca6a6d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
