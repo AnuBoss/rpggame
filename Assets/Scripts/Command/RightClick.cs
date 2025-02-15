@@ -86,5 +86,7 @@ public class RightClick : MonoBehaviour
         Instantiate(vfxPrefab, pos + new Vector3(0f, 0.1f, 0f), Quaternion.identity);
     }
 
+   
+
     
 }
