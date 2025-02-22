@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class PartyManager : MonoBehaviour
 {
+    [SerializeField] private List<Character> memdbers = new List<Character>();
+    public List<Character> Members
+    {
+        get { return memdbers; }
+    }
     [SerializeField] private List<Character> selectChars = new List<Character>();
     public List<Character> SelectChars
     {
