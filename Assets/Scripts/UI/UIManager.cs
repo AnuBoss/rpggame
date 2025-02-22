@@ -27,4 +27,16 @@ public class UIManager : MonoBehaviour
     {
         
     }
+
+    public void ToggleAI(bool isOn)
+    {
+        foreach (Character member in PartyManager.instance.Members)
+        {
+            AttackAI ai = member.gameObject.GetComponent<AttackAI>();
+            if (ai != null)
+            {
+                ai.enabled = isOn;
+            }
+        }
+    }
 }
