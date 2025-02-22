@@ -123,6 +123,8 @@ public abstract class Character : MonoBehaviour
             return;
         }
 
+        navAgent.SetDestination(curCharTarget.transform.position);
+
         float distance = Vector3.Distance(transform.position, curCharTarget.transform.position);
 
         if (distance <= attackRange)
@@ -142,7 +144,12 @@ public abstract class Character : MonoBehaviour
 
     protected void AttackUpdate()
     {
-        if (curCharTarget == null || curCharTarget.CurHP <= 0)
+        if (curCharTarget == null )
+        {
+            return;
+        }
+
+        if (curCharTarget.CurHP <= 0)
         {
             SetState(CharState.Idle);
             return;
