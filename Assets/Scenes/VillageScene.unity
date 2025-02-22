@@ -793,6 +793,7 @@ GameObject:
   - component: {fileID: 646646108}
   - component: {fileID: 646646105}
   - component: {fileID: 646646109}
+  - component: {fileID: 646646110}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -842,7 +843,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 415c0251e58b2d943a14c536a353d4e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  curChar: {fileID: 0}
   layerMask:
     serializedVersion: 2
     m_Bits: 0
@@ -859,6 +859,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doubleRingMarker: {fileID: 6044037666520248651, guid: 6e54f4c337ed9cd44a532397220bff98, type: 3}
+--- !u!114 &646646110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 646646104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d12f860bc1795e24c9012ebcca9867cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectChars: []
 --- !u!1 &724799109
 GameObject:
   m_ObjectHideFlags: 0
