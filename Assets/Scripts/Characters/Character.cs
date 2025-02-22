@@ -168,6 +168,8 @@ public abstract class Character : MonoBehaviour
         if (distance > attackRange)
         {
             SetState(CharState.WalkToEnemy);
+            navAgent.SetDestination(curCharTarget.transform.position);
+            navAgent.isStopped = false;
         }
     }
 
