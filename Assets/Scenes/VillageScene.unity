@@ -5539,7 +5539,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da1632bbabf881a4081fb314557daadb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectionBox: {fileID: 0}
+  selectionBox: {fileID: 1080726489}
 --- !u!1 &1449513400
 GameObject:
   m_ObjectHideFlags: 0
