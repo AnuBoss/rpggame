@@ -368,7 +368,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 432292, guid: 4ae430e92f898864aaa0c9527438f244, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 45.88357
+      value: 26.35
       objectReference: {fileID: 0}
     - target: {fileID: 432292, guid: 4ae430e92f898864aaa0c9527438f244, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2688,8 +2688,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 9, y: -0.5}
-  m_SizeDelta: {x: -28, y: -3}
+  m_AnchoredPosition: {x: 0.9000015, y: 12.8}
+  m_SizeDelta: {x: -84.8562, y: -33.3233}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &714496967
 MonoBehaviour:
@@ -2713,18 +2713,18 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 0
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
+    m_MinSize: 0
+    m_MaxSize: 192
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Toggle
+  m_Text: AI
 --- !u!222 &714496968
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6068,8 +6068,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 9, y: -0.5}
-  m_SizeDelta: {x: -28, y: -3}
+  m_AnchoredPosition: {x: 0, y: 14.1}
+  m_SizeDelta: {x: -57.1207, y: -32.192}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1509202778
 MonoBehaviour:
@@ -6104,7 +6104,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Toggle
+  m_Text: Pause
 --- !u!222 &1509202779
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7252,7 +7252,7 @@ GameObject:
   - component: {fileID: 1833232074}
   - component: {fileID: 1833232075}
   m_Layer: 5
-  m_Name: Toggle
+  m_Name: ToggleAI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
