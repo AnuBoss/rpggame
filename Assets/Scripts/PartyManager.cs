@@ -37,7 +37,7 @@ public class PartyManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.M))
         {
-            if (selectChars.Count > .0)
+            if (selectChars.Count > 0)
             {
                 selectChars[0].IsMagicMode = true;
                 selectChars[0].CurMagicCast = selectChars[0].MagicSkills[0];

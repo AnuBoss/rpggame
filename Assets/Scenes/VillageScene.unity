@@ -344,7 +344,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -7601338115266042180, guid: 4ae430e92f898864aaa0c9527438f244, type: 3}
       propertyPath: curHp
-      value: 10
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: -7601338115266042180, guid: 4ae430e92f898864aaa0c9527438f244, type: 3}
       propertyPath: ringSelection
@@ -1927,7 +1927,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -1747327633029262491, guid: 45b39a4a3f8ccef4bafe67aeba36f78f, type: 3}
       propertyPath: curHp
-      value: 10
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: -1747327633029262491, guid: 45b39a4a3f8ccef4bafe67aeba36f78f, type: 3}
       propertyPath: ringSelection
@@ -3398,7 +3398,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4078347238888445035, guid: 36b4b824fc10d7d4eb46dc0484090e5d, type: 3}
       propertyPath: curHp
-      value: 10
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 4078347238888445035, guid: 36b4b824fc10d7d4eb46dc0484090e5d, type: 3}
       propertyPath: ringSelection
@@ -5010,7 +5010,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -7601338115266042180, guid: 4ae430e92f898864aaa0c9527438f244, type: 3}
       propertyPath: curHp
-      value: 10
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: -7601338115266042180, guid: 4ae430e92f898864aaa0c9527438f244, type: 3}
       propertyPath: ringSelection
