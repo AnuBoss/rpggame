@@ -27,9 +27,14 @@ public class PartyManager : MonoBehaviour
     {
         foreach (Character c in memdbers)
         {
-            c.charInit(VFXManager.instance);
-            c.MagicSkills.Add(new Magic(0, "Fireball", 10f, 30, 3f, 1f, 0, 1));
+            c.charInit(VFXManager.instance, UIManager.instance);
+            
         }
+        SelectSingleHero(0);
+        memdbers[0].MagicSkills.Add(new Magic(0, "Power.Glow", 10f, 20, 3f, 1f, 2, 2));
+        memdbers[1].MagicSkills.Add(new Magic(0, "Fire Ball", 10f, 35, 3f, 4f, 0, 1));
+
+        UIManager.instance.ShowMagicToggles();
     }
 
     // Update is called once per frame
