@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class PartyManager : MonoBehaviour
 {
-    [SerializeField] private List<Character> memdbers = new List<Character>();
+    [SerializeField] private List<Character> members = new List<Character>();
     public List<Character> Members
     {
-        get { return memdbers; }
+        get { return members; }
     }
     [SerializeField] private List<Character> selectChars = new List<Character>();
     public List<Character> SelectChars
@@ -25,14 +25,19 @@ public class PartyManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        foreach (Character c in memdbers)
+        foreach (Character c in members)
         {
             c.charInit(VFXManager.instance, UIManager.instance);
             
         }
         SelectSingleHero(0);
-        memdbers[0].MagicSkills.Add(new Magic(0, "Power.Glow", 10f, 20, 3f, 1f, 2, 2));
-        memdbers[1].MagicSkills.Add(new Magic(0, "Fire Ball", 10f, 35, 3f, 4f, 0, 1));
+        /*members[0].MagicSkills.Add(new Magic(0, "Power.Glow", 10f, 20, 3f, 1f, 2, 2));
+        members[0].MagicSkills.Add(new Magic(1, "Power", 10f, 20, 4f, 1f, 1, 1));
+        members[0].MagicSkills.Add(new Magic(2, "Explosion.B", 10f, 35, 2f, 1f, 0, 3));
+
+        members[1].MagicSkills.Add(new Magic(0, "Fire Ball", 10f, 35, 3f, 2f, 0, 0));
+        members[1].MagicSkills.Add(new Magic(1, "GlowEx", 10f, 20, 4f, 1f, 4, 5));*/
+        members[0].MagicSkills.Add(new Magic(0, "Power.Glow", 10f, 20, 3f, 1f, 2, 2));
 
         UIManager.instance.ShowMagicToggles();
     }
@@ -57,7 +62,7 @@ public class PartyManager : MonoBehaviour
 
         selectChars.Clear();
 
-        selectChars.Add(memdbers[i]);
+        selectChars.Add(members[i]);
         selectChars[0].ToggleRingSelection(true);
     }
 

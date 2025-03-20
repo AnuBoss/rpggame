@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class VFXManager : MonoBehaviour
 {
@@ -30,7 +30,8 @@ public class VFXManager : MonoBehaviour
         //Load . Magic
         if (magicVFX[id]== null)
         return;
-
+        posA.y += 1.5f;
+        posA.z -= 0.5f;
         GameObject objLoad = Instantiate(magicVFX[id], posA, Quaternion.identity);
         Destroy(objLoad, time);
     }
@@ -39,7 +40,8 @@ public class VFXManager : MonoBehaviour
         //Shoot . Magic
         if (magicVFX[id]== null)
         return;
-
+       
+        posB.y += 1.5f;
         GameObject objShoot = Instantiate(magicVFX[id], posA, Quaternion.identity);
         objShoot.transform.position = Vector3.LerpUnclamped(posA, posB, time);
         Destroy(objShoot, time);
