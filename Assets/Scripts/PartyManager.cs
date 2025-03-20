@@ -44,4 +44,24 @@ public class PartyManager : MonoBehaviour
             }
         }
     }
+
+    public void SelectSingleHero(int i)
+    {
+        foreach (Character c  in selectChars)
+            c.ToggleRingSelection(false);
+
+        selectChars.Clear();
+
+        selectChars.Add(memdbers[i]);
+        selectChars[0].ToggleRingSelection(true);
+    }
+
+    public void HeroSelectMagicSkill(int i)
+    {
+        if (selectChars.Count <= 0)
+            return;
+
+        selectChars[0].IsMagicMode = true;
+        selectChars[0].CurMagicCast = selectChars[0].MagicSkills[i];
+    }
 }
