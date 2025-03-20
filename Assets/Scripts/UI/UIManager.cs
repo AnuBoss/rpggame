@@ -70,7 +70,7 @@ void Awake()
         Time.timeScale = isOn ? 0 : 1;
     }
 
-    public void ShowMagicToggles()
+    /*public void ShowMagicToggles()
     {
         if (PartyManager.instance.SelectChars.Count <= 0)
             return;
@@ -84,7 +84,33 @@ void Awake()
             toggleMagic[i].isOn = false;
             toggleMagic[i].GetComponentInChildren<Text>().text = hero.MagicSkills[i].Name;
         }
+    }*/
+
+    public void ShowMagicToggles()
+    {
+        if (PartyManager.instance.SelectChars.Count <= 0)
+            return;
+
+        
+        Character hero = PartyManager.instance.SelectChars[0];
+
+        
+        for (int i = 0; i < toggleMagic.Length; i++)
+        {
+            toggleMagic[i].interactable = false; 
+            toggleMagic[i].isOn = false; 
+            toggleMagic[i].GetComponentInChildren<Text>().text = ""; 
+        }
+
+        
+        for (int i = 0; i < hero.MagicSkills.Count && i < toggleMagic.Length; i++)
+        {
+            toggleMagic[i].interactable = true;
+            toggleMagic[i].isOn = false;
+            toggleMagic[i].GetComponentInChildren<Text>().text = hero.MagicSkills[i].Name;
+        }
     }
+
 
     public void SelectMagicSkill(int i)
     {
