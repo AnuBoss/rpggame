@@ -80,7 +80,8 @@ public abstract class Character : MonoBehaviour
     {
         get { return findingRange; }
     }
-    
+   
+    protected UIManager uiManager;
     void Awake()
     {
         navAgent = GetComponent<NavMeshAgent>();
@@ -258,9 +259,10 @@ public abstract class Character : MonoBehaviour
         return false;
     }
 
-    public void charInit(VFXManager vfxM)
+    public void charInit(VFXManager vfxM, UIManager uiM)
     {
         vfxManager = vfxM;
+        uiManager = uiM;
     }
 
     public void ReceiveDamage(int damage)
@@ -297,6 +299,8 @@ public abstract class Character : MonoBehaviour
         isMagicMode = false;
 
         SetState(CharState.Idle);
+        if (uiManager != null)
+            uiManager.IsOnCurToggleMagic(false);
     }
 
     private IEnumerator LoadMagicCast(Magic curMagicCast)
