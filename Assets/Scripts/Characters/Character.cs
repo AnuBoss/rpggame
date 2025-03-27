@@ -80,8 +80,21 @@ public abstract class Character : MonoBehaviour
     {
         get { return findingRange; }
     }
-   
-    protected UIManager uiManager;
+    [SerializeField]
+    protected Item[] inventoryItems;
+    public Item[] InventoryItems
+    { get { return inventoryItems; }
+    set { inventoryItems =value; } }
+
+    [SerializeField]
+    protected Item mainWeapon;
+    public Item MainWeapon { get { return mainWeapon; } set { mainWeapon = value; } }
+
+    [SerializeField]
+    protected Item shield;
+    public Item Shield { get { return shield; } set { shield = value; } }
+
+protected UIManager uiManager;
     void Awake()
     {
         navAgent = GetComponent<NavMeshAgent>();
