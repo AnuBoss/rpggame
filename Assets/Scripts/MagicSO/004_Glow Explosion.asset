@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 83f0ad59072711944b2996453ba4b7d2, type: 3}
-  m_Name: 001_FireBall
+  m_Name: 004_Glow Explosion
   m_EditorClassIdentifier: 
-  id: 1
-  magicName: Fire Ball
-  icon: {fileID: 21300000, guid: 9f69b220176e6964fbd87f5f158d45e3, type: 3}
+  id: 4
+  magicName: Glow explosion
+  icon: {fileID: 0}
   range: 10
-  power: 35
-  loadTime: 3
-  shootTime: 2
-  loadId: 0
-  shootId: 0
+  power: 25
+  loadTime: 4
+  shootTime: 1
+  loadId: 4
+  shootId: 5
