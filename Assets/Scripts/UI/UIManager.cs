@@ -21,6 +21,12 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     private int curToggleMagicID = -1;
 
+    [SerializeField]
+    private GameObject blackImage;
+
+    [SerializeField]
+    private GameObject inventoryPanel;
+
 void Awake()
     {
         instance = this;
@@ -122,5 +128,21 @@ void Awake()
     public void IsOnCurToggleMagic(bool flag)
     {
         toggleMagic[curToggleMagicID].isOn = flag;
+    }
+
+    public void ToggleInventoryPanel()
+    {
+        if (!inventoryPanel.activeInHierarchy)
+        {
+            inventoryPanel.SetActive(true);
+            blackImage.SetActive(true);
+        }
+        else
+        {
+            inventoryPanel.SetActive(false);
+            blackImage.SetActive(false);
+        }
+
+
     }
 }

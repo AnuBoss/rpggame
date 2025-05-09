@@ -8085,6 +8085,8 @@ MonoBehaviour:
   - {fileID: 615242674}
   - {fileID: 652091942}
   curToggleMagicID: -1
+  blackImage: {fileID: 1944598583}
+  inventoryPanel: {fileID: 1617459066}
 --- !u!1 &1449513400
 GameObject:
   m_ObjectHideFlags: 0
@@ -8441,7 +8443,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1497827510}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1443062266}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: ToggleInventoryPanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1497827510
 MonoBehaviour:
   m_ObjectHideFlags: 0
