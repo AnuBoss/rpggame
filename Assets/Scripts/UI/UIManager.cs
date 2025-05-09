@@ -27,7 +27,13 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     private GameObject inventoryPanel;
 
-void Awake()
+    [SerializeField]
+    private GameObject itemUIPrefab;
+
+    [SerializeField]
+    private GameObject[] slots;
+
+    void Awake()
     {
         instance = this;
     }
@@ -136,13 +142,48 @@ void Awake()
         {
             inventoryPanel.SetActive(true);
             blackImage.SetActive(true);
+            ShowInventory();
         }
         else
         {
             inventoryPanel.SetActive(false);
             blackImage.SetActive(false);
+            ClearInventory();
         }
 
-
     }
+
+    public void ClearInventory()
+    {
+        //Clear. Slots
+        for(int i = 0; i < slots.Length; i++)
+        {
+            if (slots[i].transform.childCount > 0)
+            {
+                Transform child = slots[i].transform.GetChild(0);
+                Destroy(child.gameObject);
+
+            }
+        }
+    }
+    public void ShowInventory()
+    {
+        // Check if any character is selected
+        if (PartyManager.instance.SelectChars.Count <= 0)
+            return;
+
+        // Show inventory of the first selected character
+        Character hero = PartyManager.instance.SelectChars[0];
+
+        // Show items
+        for (int i = 0; i < hero.InventoryItems.Length; i++)
+        {
+            if (hero.InventoryItems[i] != null)
+            {
+                GameObject itemObj = Instantiate(itemUIPrefab, slots[i].transform);
+                itemObj.GetComponent<Image>().sprite = hero.InventoryItems[i].Icon;
+            }
+        }
+    }
+
 }
