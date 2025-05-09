@@ -41,7 +41,7 @@ public class InventoryManager : MonoBehaviour
     {
         Item item = new Item(itemData[id]);
 
-        for (int i =  0; i < MAXSLOT; i++)
+        for (int i =  0; i < character.InventoryItems.Length; i++)
         {
             if (character.InventoryItems[i] == null)
             {
@@ -51,8 +51,8 @@ public class InventoryManager : MonoBehaviour
                 
         }
         Debug.Log("Inventory . Full");
-        return false
+        return false;
 
-       ;
+      
     }
 }

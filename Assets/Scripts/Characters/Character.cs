@@ -80,6 +80,8 @@ public abstract class Character : MonoBehaviour
     {
         get { return findingRange; }
     }
+
+    [Header("Inventory")]
     [SerializeField]
     protected Item[] inventoryItems;
     public Item[] InventoryItems
@@ -94,7 +96,7 @@ public abstract class Character : MonoBehaviour
     protected Item shield;
     public Item Shield { get { return shield; } set { shield = value; } }
 
-protected UIManager uiManager;
+    protected UIManager uiManager;
     void Awake()
     {
         navAgent = GetComponent<NavMeshAgent>();
@@ -276,6 +278,8 @@ protected UIManager uiManager;
     {
         vfxManager = vfxM;
         uiManager = uiM;
+
+        inventoryItems = new Item[16];
     }
 
     public void ReceiveDamage(int damage)
