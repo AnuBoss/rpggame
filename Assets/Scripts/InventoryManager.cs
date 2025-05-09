@@ -1,22 +1,16 @@
 using UnityEngine;
-using static UnityEditor.Progress;
-using static UnityEngine.Rendering.DebugUI;
+
 
 public class InventoryManager : MonoBehaviour
 {
+   
     [SerializeField]
     private GameObject[] itemPrefabs;
-    public GameObject[] ItemPrefabs
-    {
-        get { return itemPrefabs; }
-        set{ itemPrefabs = value; }
-    }
-
+    public GameObject[] ItemPrefabs { get { return itemPrefabs; } set { itemPrefabs = value; } }
 
     [SerializeField]
     private ItemData[] itemData;
-    public  ItemData[] ItemData
-    { get { return itemData; } set { itemData = value; } }
+    public ItemData[] ItemData { get { return itemData; } set { itemData = value; } }
 
     public const int MAXSLOT = 16;
 

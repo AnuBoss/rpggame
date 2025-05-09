@@ -27,12 +27,10 @@ public class PartyManager : MonoBehaviour
     {
         foreach (Character c in members)
         {
-            c.charInit(VFXManager.instance, UIManager.instance);
-            
+            c.charInit(VFXManager.instance, UIManager.instance, InventoryManager.instance);
         }
 
-        InventoryManager.instance.AddItem(members[0], 0);
-
+       
         SelectSingleHero(0);
         members[0].MagicSkills.Add(new Magic(VFXManager.instance.MagicData[0]));
         members[0].MagicSkills.Add(new Magic(VFXManager.instance.MagicData[2]));
@@ -40,6 +38,10 @@ public class PartyManager : MonoBehaviour
 
         members[1].MagicSkills.Add(new Magic(VFXManager.instance.MagicData[1]));
         members[1].MagicSkills.Add(new Magic(VFXManager.instance.MagicData[4]));
+
+        InventoryManager.instance.AddItem(members[0], 0);
+        InventoryManager.instance.AddItem(members[0], 1);
+        InventoryManager.instance.AddItem(members[0], 2);
 
         foreach (var member in PartyManager.instance.Members)
         {

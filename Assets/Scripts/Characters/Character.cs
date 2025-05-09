@@ -55,6 +55,7 @@ public abstract class Character : MonoBehaviour
     { get { return isMagicMode; } set { isMagicMode = value; } }
 
     protected VFXManager vfxManager;
+    protected InventoryManager invManager;
 
     [SerializeField] protected int curHp = 10;
     public int CurHP
@@ -276,14 +277,21 @@ public abstract class Character : MonoBehaviour
         return false;
     }
 
-    public void charInit(VFXManager vfxM, UIManager uiM)
+   /* public void charInit(VFXManager vfxM, UIManager uiM)
     {
         vfxManager = vfxM;
         uiManager = uiM;
 
         inventoryItems = new Item[16];
-    }
+    }*/
+    public void charInit(VFXManager vfxM, UIManager uiM, InventoryManager invM)
+    {
+        vfxManager = vfxM;
+        uiManager = uiM;
+        invManager = invM;
 
+        inventoryItems = new Item[InventoryManager.MAXSLOT];
+    }
     public void ReceiveDamage(int damage)
     {
         if (curHp <= 0 || state == CharState.Die)
