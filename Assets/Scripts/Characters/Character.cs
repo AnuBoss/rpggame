@@ -85,8 +85,7 @@ public abstract class Character : MonoBehaviour
     [SerializeField]
     protected Item[] inventoryItems;
     public Item[] InventoryItems
-    { get { return inventoryItems; }
-    set { inventoryItems =value; } }
+    { get { return inventoryItems; } set { inventoryItems = value; } }
 
     [SerializeField]
     protected Item mainWeapon;
@@ -96,11 +95,14 @@ public abstract class Character : MonoBehaviour
     protected Item shield;
     public Item Shield { get { return shield; } set { shield = value; } }
 
+
     protected UIManager uiManager;
     void Awake()
     {
         navAgent = GetComponent<NavMeshAgent>();
         anim =GetComponent<Animator>();
+
+
     }
 
     public void SetState(CharState s)

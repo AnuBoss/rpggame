@@ -39,6 +39,11 @@ public class InventoryManager : MonoBehaviour
 
     public bool AddItem(Character character, int id)
     {
+        if (character.InventoryItems == null)
+        {
+            Debug.LogError("InventoryItems is NULL for character " + character.name);
+            return false;
+        }
         Item item = new Item(itemData[id]);
 
         for (int i =  0; i < character.InventoryItems.Length; i++)
@@ -46,6 +51,8 @@ public class InventoryManager : MonoBehaviour
             if (character.InventoryItems[i] == null)
             {
                 character.InventoryItems[i] = item;
+                Debug.Log("Item added: " + item.ItemName + " to " + character.name);
+                Debug.Log($"Adding item to: {character.name} (InstanceID: {character.GetInstanceID()})");
                 return true;
             }
                 

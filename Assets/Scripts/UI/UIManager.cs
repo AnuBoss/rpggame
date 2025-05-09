@@ -175,11 +175,16 @@ public class UIManager : MonoBehaviour
         // Show inventory of the first selected character
         Character hero = PartyManager.instance.SelectChars[0];
 
+        Debug.Log($"Showing inventory for: {hero.name}");
+
+
         // Show items
         for (int i = 0; i < hero.InventoryItems.Length; i++)
         {
             if (hero.InventoryItems[i] != null)
             {
+                Debug.Log($"Item at slot {i}: {hero.InventoryItems[i].ItemName}");
+
                 GameObject itemObj = Instantiate(itemUIPrefab, slots[i].transform);
                 itemObj.GetComponent<Image>().sprite = hero.InventoryItems[i].Icon;
             }
