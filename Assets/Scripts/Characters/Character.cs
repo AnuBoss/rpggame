@@ -105,9 +105,32 @@ public abstract class Character : MonoBehaviour
     protected Item mainWeapon;
     public Item MainWeapon { get { return mainWeapon; } set { mainWeapon = value; } }
 
+
     [SerializeField]
     protected Item shield;
     public Item Shield { get { return shield; } set { shield = value; } }
+    
+    [SerializeField]
+    protected Transform shieldHand;
+
+    [SerializeField]
+    protected GameObject shieldobj;
+
+    [SerializeField]
+    protected int defensePower = 0;
+
+    [SerializeField]
+    protected Item weapon;
+    public Item Weapon { get { return weapon; } set { weapon = value; } }
+
+    [SerializeField]
+    protected Transform weaponHand;
+
+    [SerializeField]
+    protected GameObject weaponobj;
+
+    [SerializeField]
+    protected int weaponPower = 0;
 
 
     protected UIManager uiManager;
@@ -413,5 +436,36 @@ public abstract class Character : MonoBehaviour
 
         if (curHp > maxHP)
             curHp = maxHP;
+    }
+    public void EquipShield(Item item)
+    {
+        shieldobj = Instantiate(invManager.ItemPrefabs[item.PrefabID], shieldHand);
+        shieldobj.transform.localPosition = new Vector3(-8.5f, -4f, 3f);
+        shieldobj.transform.Rotate(-90f, 0f, 180f, Space.Self);
+
+        defensePower += item.Power;
+        shield = item;
+    }
+    public void UnEquipShield()
+    {
+        defensePower -= shield.Power;
+        shield = null;
+        Destroy(shieldobj);
+    }
+
+    public void EquipWeapon(Item item)
+    {
+        weaponobj = Instantiate(invManager.ItemPrefabs[item.PrefabID], weaponHand);
+        weaponobj.transform.localPosition = new Vector3(7.5f, 2f, 8f);
+        weaponobj.transform.Rotate(90f, 0f, 180f, Space.Self);
+
+        weaponPower += item.Power;
+        weapon = item;
+    }
+    public void UnEquipWeapon()
+    {
+        weaponPower -= weapon.Power;
+        weapon = null;
+        Destroy(weaponobj);
     }
 }

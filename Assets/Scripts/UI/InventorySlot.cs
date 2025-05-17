@@ -34,7 +34,7 @@ public class InventorySlot : MonoBehaviour, IDropHandler
         InventorySlot slotA = itemDragA.IconParent.GetComponent<InventorySlot>();
 
 
-        /*if (itemType == ItemType.Shield && itemType == ItemType.Weapon)
+        if (itemType == ItemType.Shield && itemType == ItemType.Weapon)
         {
             if (itemDragA.Item.Type != itemType)
                 return;
@@ -50,25 +50,28 @@ public class InventorySlot : MonoBehaviour, IDropHandler
             GameObject objB = transform.GetChild(0).gameObject;
             ItemDrag itemDragB = objB.GetComponent<ItemDrag>();
 
-           /* if (slotA.ItemType == ItemType.Shield && itemType == ItemType.Weapon)
+            if (slotA.ItemType == ItemType.Shield && itemType == ItemType.Weapon)
             {
                 if (itemDragB.Item.Type != slotA.ItemType)
                     return;
             }
             inventoryManager.RemoveItemInBag(slotA.ID);
-            */
+
             itemDragB.transform.SetParent(itemDragA.IconParent);
             itemDragB.IconParent = itemDragA.IconParent;
             inventoryManager.SaveItemBag(slotA.ID, itemDragB.Item);
 
             inventoryManager.RemoveItemInBag(id);
         }
-       /* else//Slot . B . is . blank
+        else//Slot . B . is . blank
         {
             inventoryManager.RemoveItemInBag(slotA.ID);
-        }*/
+        }
 
         itemDragA.IconParent = transform;
         inventoryManager.SaveItemBag(id, itemDragA.Item);
+
+
+
     }
 }

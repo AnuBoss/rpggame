@@ -15,7 +15,9 @@ public class LeftClick : MonoBehaviour
     [SerializeField] private RectTransform boxSelection;
     private Vector2 oldAnchoredPos;
     private Vector2 startPos;
-    
+
+    private bool isPointerOverUI = false;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -33,11 +35,8 @@ public class LeftClick : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             startPos = Input.mousePosition;
-
             if (EventSystem.current.IsPointerOverGameObject())
-            {
                 return;
-            }
             ClearEverything();
         }
 
@@ -47,8 +46,12 @@ public class LeftClick : MonoBehaviour
         }
         if (Input.GetMouseButtonUp(0))
         {
+           
             ReleaseSelectionBox(Input.mousePosition);
             TrySelect(Input.mousePosition);
+            
+
+            
         }
     }
 

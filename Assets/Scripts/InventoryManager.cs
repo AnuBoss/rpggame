@@ -52,12 +52,31 @@ public class InventoryManager : MonoBehaviour
         if (PartyManager.instance.SelectChars.Count == 0)
             return;
         PartyManager.instance.SelectChars[0].InventoryItems[index] = item;
+        switch (index)
+        {
+            case 16:
+                PartyManager.instance.SelectChars[0].EquipShield(item);
+                break;
+            case 17:
+                PartyManager.instance.SelectChars[0].EquipWeapon(item);
+
+                break;
+        }
     }
     public void RemoveItemInBag(int index)
     {
         if (PartyManager.instance.SelectChars.Count == 0)
             return;
         PartyManager.instance.SelectChars[0].InventoryItems[index] = null;
+        switch (index)
+        {
+            case 16:
+                PartyManager.instance.SelectChars[0].UnEquipShield();
+                break;
+            case 17:
+                PartyManager.instance.SelectChars[0].UnEquipWeapon();
+                break;
+        }
     }
     private void SpawnDropItem(Item item, Vector3 pos)
     {
