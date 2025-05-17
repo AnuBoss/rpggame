@@ -3015,7 +3015,7 @@ MonoBehaviour:
     icon: {fileID: 0}
     power: 0
     prefabID: 0
-  shieldHand: {fileID: 483062}
+  shieldHand: {fileID: 0}
   shieldobj: {fileID: 0}
   defensePower: 0
   weapon:

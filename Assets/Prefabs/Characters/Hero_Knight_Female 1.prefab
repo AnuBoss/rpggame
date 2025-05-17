@@ -1351,7 +1351,7 @@ MonoBehaviour:
     icon: {fileID: 0}
     power: 0
     prefabID: 0
-  shieldHand: {fileID: 479758}
+  shieldHand: {fileID: 0}
   shieldobj: {fileID: 0}
   defensePower: 0
   weapon:
@@ -1361,7 +1361,7 @@ MonoBehaviour:
     icon: {fileID: 0}
     power: 0
     prefabID: 0
-  weaponHand: {fileID: 475994}
+  weaponHand: {fileID: 0}
   weaponobj: {fileID: 0}
   weaponPower: 0
 --- !u!114 &-6031828350603293894
