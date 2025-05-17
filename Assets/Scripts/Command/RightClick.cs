@@ -67,6 +67,9 @@ public class RightClick : MonoBehaviour
                 case "Enemy":
                     CommandToAttack(hit,PartyManager.instance.SelectChars);
                     break;
+                case "NPC":
+                    CommandTalkToNPC(hit, PartyManager.instance.SelectChars);
+                    break;
             }
         }
     }
@@ -81,7 +84,18 @@ public class RightClick : MonoBehaviour
         Instantiate(vfxPrefab, pos + new Vector3(0f, 0.1f, 0f), Quaternion.identity);
     }
 
-   
+    private void CommandTalkToNPC(RaycastHit hit, List<Character> heroes)
+    {
+        Character npc = hit.collider.GetComponent<Character>();
+        Debug.Log("Talk to NPC: " + npc);
 
-    
+        if (heroes.Count <= 0)
+           return;
+
+        heroes[0].ToTalkToNPC(npc);
+    }
+
+
+
+
 }
