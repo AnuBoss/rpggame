@@ -43,11 +43,6 @@ public class PartyManager : MonoBehaviour
         InventoryManager.instance.AddItem(members[0], 1);
         InventoryManager.instance.AddItem(members[0], 2);
 
-        foreach (var member in PartyManager.instance.Members)
-        {
-            Debug.Log($"Member in party: {member.name} (InstanceID: {member.GetInstanceID()})");
-           
-        }
 
         UIManager.instance.ShowMagicToggles();
     }
