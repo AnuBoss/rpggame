@@ -46,4 +46,17 @@ public class InventoryManager : MonoBehaviour
         return false;
 
     }
+
+    public void SaveItemBag(int index, Item item)
+    {
+        if (PartyManager.instance.SelectChars.Count == 0)
+            return;
+        PartyManager.instance.SelectChars[0].InventoryItems[index] = item;
+    }
+    public void RemoveItemInBag(int index)
+    {
+        if (PartyManager.instance.SelectChars.Count == 0)
+            return;
+        PartyManager.instance.SelectChars[0].InventoryItems[index] = null;
+    }
 }

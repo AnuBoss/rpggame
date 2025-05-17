@@ -41,7 +41,7 @@ public class UIManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        //InitSlots();
+        InitSlots();
     }
 
     // Update is called once per frame
@@ -195,12 +195,12 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    /*private void InitSlots()
+    private void InitSlots()
     {
         for (int i = 0; i < InventoryManager.MAXSLOT; i++)
         {
             slots[i].GetComponent<InventorySlot>().ID = i;
         }
-    }*/
+    }
 
 }
