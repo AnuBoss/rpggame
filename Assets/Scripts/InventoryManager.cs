@@ -59,4 +59,32 @@ public class InventoryManager : MonoBehaviour
             return;
         PartyManager.instance.SelectChars[0].InventoryItems[index] = null;
     }
+    private void SpawnDropItem(Item item, Vector3 pos)
+    {
+        int id;
+        switch (item.Type)
+        {
+            case ItemType.Consumable:
+                id = 1;
+                break;
+            default:
+                id = 0;
+                break;
+        }
+        GameObject itemObj = Instantiate(ItemPrefabs[id], pos, Quaternion.identity);
+        itemObj.AddComponent<ItemPick>();
+
+        ItemPick itemPick = itemObj.GetComponent<ItemPick>();
+        itemPick.Init(item, instance, PartyManager.instance);
+    }
+    public void SpawnDropInventory(Item[] item, Vector3 pos)
+    {
+        Vector3 spawnPos = pos + new Vector3(0, 5f, 0);
+
+        for (int i = 0; i < 1; i++)
+        {
+            if (item[i] != null)
+                SpawnDropItem(item[i], pos);
+        }
+    }
 }

@@ -242,6 +242,8 @@ public abstract class Character : MonoBehaviour
         
         anim.SetTrigger("Die");
 
+        invManager.SpawnDropInventory(inventoryItems, transform.position);
+
         StartCoroutine(DestroyObject());
     }
 
