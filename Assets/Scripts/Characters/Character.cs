@@ -72,6 +72,10 @@ public abstract class Character : MonoBehaviour
         get { return curHp; }
     }
 
+    [SerializeField]
+    protected int maxHP = 100;
+    public int MaxHP { get { return maxHP; } }
+
     [SerializeField] protected Character curCharTarget;
     public Character CurCharTarget
     {
@@ -403,5 +407,11 @@ public abstract class Character : MonoBehaviour
         SetState(CharState.WalkToNPC);
     }
 
+    public void Recover(int n)
+    {
+        curHp += n;
 
+        if (curHp > maxHP)
+            curHp = maxHP;
+    }
 }
