@@ -136,4 +136,27 @@ public class InventoryManager : MonoBehaviour
         }
         return false;
     }
+
+    public bool RemoveItemFromParty(int id)
+    {
+        Item item = new Item(itemData[id]);
+        Debug.Log($"Finding {item.ItemName}");
+
+        List<Character> selectedHero = PartyManager.instance.SelectChars;
+
+        foreach (Character hero in selectedHero)
+        {
+            for (int i = 0; i < hero.InventoryItems.Length; i++)
+            {
+                if (hero.InventoryItems[i].ID == item.ID)
+                {
+                    Debug.Log($"Removing {hero.InventoryItems[i].ItemName}");
+                    hero.InventoryItems[i] = null;
+                    Debug.Log($"Removed. {hero.InventoryItems[i]}");
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }

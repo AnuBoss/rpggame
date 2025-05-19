@@ -1216,7 +1216,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 141475564}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1443062266}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: AnswerNotFinish
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &141475564
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4238,10 +4250,10 @@ GameObject:
   - component: {fileID: 646646108}
   - component: {fileID: 646646105}
   - component: {fileID: 646646109}
-  - component: {fileID: 646646112}
   - component: {fileID: 646646113}
   - component: {fileID: 646646114}
   - component: {fileID: 646646115}
+  - component: {fileID: 646646116}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -4321,23 +4333,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8e847e1f2f2fa9e4d94018d055b027f4, type: 2}
   - {fileID: 11400000, guid: da659434d9f516545a8359c89d006449, type: 2}
   - {fileID: 11400000, guid: da8e0d3f719452540a5ea039d8ca49d7, type: 2}
---- !u!114 &646646112
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 646646104}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d12f860bc1795e24c9012ebcca9867cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  members:
-  - {fileID: 1782474487}
-  - {fileID: 1141465129}
-  - {fileID: 1654240000}
-  selectChars: []
 --- !u!114 &646646113
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4397,6 +4392,23 @@ MonoBehaviour:
   questData:
   - {fileID: 11400000, guid: 827f1a35cd1840a41814d18ac4296c18, type: 2}
   curNpc: {fileID: 0}
+--- !u!114 &646646116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 646646104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d12f860bc1795e24c9012ebcca9867cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  members:
+  - {fileID: 1782474487}
+  - {fileID: 1141465129}
+  - {fileID: 1654240000}
+  selectChars: []
 --- !u!1 &652091941
 GameObject:
   m_ObjectHideFlags: 0
@@ -12776,7 +12788,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1782905232}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1443062266}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: AnswerFinish
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1782905232
 MonoBehaviour:
   m_ObjectHideFlags: 0

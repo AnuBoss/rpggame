@@ -415,4 +415,24 @@ public class UIManager : MonoBehaviour
         QuestManager.instance.AcceptQuest();
         ToggleDialogueBox(false);
     }
+
+    public void AnswerFinish() //map with ButtonFinish
+    {
+        Debug.Log("Can. Finish Quest");
+        bool success  = QuestManager.instance.DeliverItem();
+
+        if (success)
+        {
+            if (QuestManager.instance.NpcGiveReward())
+            {
+                Debug.Log("Quest Completed");
+                ToggleDialogueBox(false);
+            }
+        }
+    }
+    public void AnswerNotFinish() //map with ButtonNotFinish
+    {
+        Debug.Log("Cannot Finish Quest");
+        ToggleDialogueBox(false);
+    }
 }

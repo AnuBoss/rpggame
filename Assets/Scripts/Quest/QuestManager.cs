@@ -100,4 +100,29 @@ public class QuestManager : MonoBehaviour
         PartyManager.instance.QuestList.Add(curQuest);
     }
 
+    public bool DeliverItem()
+    {
+        return InventoryManager.instance.RemoveItemFromParty(curQuest.QuestItemId);
+    }
+
+    public bool NpcGiveReward()
+    {
+        if (PartyManager.instance.SelectChars.Count == 0)
+            return false;
+
+        Character hero = PartyManager.instance.SelectChars[0];
+
+        Item item = new Item(InventoryManager.instance.ItemData[curQuest.RewardItemId]);
+
+        for (int i = 0; i < 16; i++)
+        {
+            if (hero.InventoryItems[i] == null)
+            {
+                hero.InventoryItems[i] = item;
+                curQuest.Status = QuestStatus.Finish;
+                return true;
+            }
+        }
+        return false;
+    }
 }

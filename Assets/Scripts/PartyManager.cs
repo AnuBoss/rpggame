@@ -15,9 +15,11 @@ public class PartyManager : MonoBehaviour
         get { return selectChars; }
     }
 
-    [SerializeField]
-    private List<Quest> questList = new List<Quest>();
-    public List<Quest> QuestList { get { return questList; } }
+    [SerializeField] private List<Quest> questList = new List<Quest>();
+    public List<Quest> QuestList
+    { 
+        get { return questList; } 
+    }
 
     public static PartyManager instance;
 
