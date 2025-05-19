@@ -78,4 +78,23 @@ public class Quest
     [SerializeField]
     private string answerNotFinish;
     public string AnswerNotFinish { get { return answerNotFinish; } }
+
+    public Quest(QuestData questData)
+    {
+        questId = questData.questId;
+        type = questData.type;
+        status = questData.status;
+        questName = questData.questName;
+        questDetail = questData.questDetail;
+        questItemId = questData.questItemId;
+        questDialogue = questData.questDialogue;
+        answerNext = questData.answerNext;
+        answerAccept = questData.answerAccept;
+        answerReject = questData.answerReject;
+        rewardItemId = questData.rewardItemId;
+        rewardExp = questData.rewardExp;
+        questionInProgress = questData.questionInProgress;
+        answerFinish = questData.answerFinish;
+        answerNotFinish = questData.answerNotFinish;
+    }
 }

@@ -1850,6 +1850,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4178b335069ad4e4d8bc1c5e9352f85d, type: 3}
+--- !u!114 &406553346 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -2498354288511831142, guid: 4178b335069ad4e4d8bc1c5e9352f85d, type: 3}
+  m_PrefabInstance: {fileID: 406553345}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c0fc9a9b0888444d9b913d132e2c1d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &407854920
 GameObject:
   m_ObjectHideFlags: 0
@@ -3461,6 +3472,7 @@ GameObject:
   - component: {fileID: 646646112}
   - component: {fileID: 646646113}
   - component: {fileID: 646646114}
+  - component: {fileID: 646646115}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -3599,6 +3611,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monsters:
   - {fileID: 1239178510}
+--- !u!114 &646646115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 646646104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7ae0a5c0e83ada4c9373ad64db55fd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npcPerson:
+  - {fileID: 406553346}
+  questData:
+  - {fileID: 11400000, guid: 827f1a35cd1840a41814d18ac4296c18, type: 2}
+  curNpc: {fileID: 0}
 --- !u!1 &652091941
 GameObject:
   m_ObjectHideFlags: 0
