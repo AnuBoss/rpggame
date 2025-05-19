@@ -74,6 +74,30 @@ public class QuestManager : MonoBehaviour
         return success;
     }
 
+    public bool CheckLastDialogue(int i)
+    {
+        if (i == curQuest.QuestDialogue.Length - 1)
+            return true;
+        else
+            return false;
+    }
 
+    public string NextDialogue(int i) //map.with .ButtonNext
+    {
+        if (i < curQuest.QuestDialogue.Length)
+            return curQuest.QuestDialogue[i];
+        else
+            return "";
+    }
+
+    public void RejectQuest() //map with ButtonReject
+    {
+        curQuest.Status = QuestStatus.Reject;
+    }
+    public void AcceptQuest() //map with ButtonAccept
+    {
+        curQuest.Status = QuestStatus.InProgess;
+        PartyManager.instance.QuestList.Add(curQuest);
+    }
 
 }
