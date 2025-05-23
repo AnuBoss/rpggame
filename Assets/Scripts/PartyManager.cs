@@ -132,4 +132,15 @@ public class PartyManager : MonoBehaviour
         }
 
     }
+
+    public void RemoveHeroFromParty(int id)
+    {
+        if (id < 0 || id >= members.Count)  // Ensure index is within range
+            return;
+
+        if (selectChars.Contains(members[id]))
+            selectChars.Remove(members[id]);
+
+        members.RemoveAt(id);  // Use RemoveAt() instead of Remove(members[id]) to avoid issues
+    }
 }

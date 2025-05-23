@@ -6,6 +6,7 @@ using UnityEditor.PackageManager.Requests;
 using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 public class UIManager : MonoBehaviour
 {
@@ -117,6 +118,21 @@ public class UIManager : MonoBehaviour
 
     [SerializeField]
     private Image heroImage;
+
+    [SerializeField]
+    private GameObject partyPanel;
+
+    [SerializeField]
+    private Toggle[] toggleRemove;
+
+    [SerializeField]
+    private int idToRemove =- 1;
+
+    [SerializeField]
+    private Button removeButton;
+
+    [SerializeField]
+    private GameObject confirmPanel;
 
     void Awake()
     {
@@ -546,4 +562,79 @@ public class UIManager : MonoBehaviour
             ClearCharPanel();
         }
     }
+
+    public void MapToggleRemove()
+    {
+        foreach (Toggle t in toggleRemove)
+            t.gameObject.SetActive(false);
+
+        List<Character> members = PartyManager.instance.Members;
+
+        for (int i = 1; i < members.Count; i++)
+        {
+            toggleRemove[i - 1].gameObject.SetActive(true);
+            toggleRemove[i - 1].targetGraphic.GetComponent<Image>().sprite = members[i].AvatarPic;
+        }
+    }
+
+    private void CheckRemoveButton()
+    {
+        switch (idToRemove)
+        {
+            case -1:
+            case 0:
+                removeButton.interactable = false;
+                break;
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+            case 5:
+                removeButton.interactable = true;
+                break;
+            default:
+                removeButton.interactable = false;
+                break;
+        }
+    }
+
+    public void TogglePartyPanel(bool flag)
+    {
+        charPanel.SetActive(!flag);
+        partyPanel.SetActive(flag);
+        MapToggleRemove();
+        CheckRemoveButton();
+    }
+
+    public void SelectToRemove(int i)
+    {
+        if (toggleRemove[i - 1].isOn)
+            idToRemove = i;
+        else
+            idToRemove = -1;
+
+        CheckRemoveButton();
+    }
+
+    public void ToggleConfirmPanel(bool flag)
+    {
+        if (!flag)
+        {
+            MapToggleRemove();
+            idToRemove = -1;
+            CheckRemoveButton();
+        }
+
+        partyPanel.SetActive(!flag);
+        confirmPanel.SetActive(flag);
+    }
+
+    public void RemoveMemberFromParty()
+    {
+        toggleAvatar[idToRemove].isOn = false;
+        PartyManager.instance.RemoveHeroFromParty(idToRemove);
+        MapToggleAvatar();
+        ToggleConfirmPanel(false);
+    }
+
 }

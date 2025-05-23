@@ -43,6 +43,9 @@ public class LeftClick : MonoBehaviour
 
         if (Input.GetMouseButton(0))
         {
+            if (EventSystem.current.IsPointerOverGameObject())
+                return;
+
             UpdateSelectionBox(Input.mousePosition);
         }
         if (Input.GetMouseButtonUp(0))
