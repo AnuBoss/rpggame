@@ -72,8 +72,7 @@ void Start()
 
     protected void WalkToNPCUpdate()
     {
-        float distance =Vector3.Distance(transform.position,
-                                            curCharTarget.transform.position);
+        float distance = Vector3.Distance(transform.position, curCharTarget.transform.position);
 
         if (distance <= 2f)
         {
@@ -82,7 +81,24 @@ void Start()
 
             Npc npc = curCharTarget.GetComponent<Npc>();
 
-            uiManager.PrepareDialogueBox(npc);
+            if (npc.IsShopKeeper)
+                uiManager.PrepareShopPanel(npc, this);
+            else
+                uiManager.PrepareDialogueBox(npc);
         }
     }
+
+    public void SaveItemInInventory(Item item)
+    {
+        for (int i = 0; i < 16; i++)
+        {
+            if (InventoryItems[i] == null)
+            {
+                InventoryItems[i] = item;
+                return; // Ensures only the first empty slot is filled
+            }
+        }
+    }
+
+
 }
