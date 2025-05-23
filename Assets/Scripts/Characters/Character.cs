@@ -87,6 +87,9 @@ public abstract class Character : MonoBehaviour
         get { return attackRange; }
     }
     [SerializeField] protected int attackDamage = 3;
+    public int AttackDamage { get { return attackDamage; } }
+
+
     [SerializeField] protected float attackCoolDown = 2f;
     [SerializeField] protected float attackTimer = 0f;
     [SerializeField] protected float findingRange = 20f;
@@ -118,6 +121,7 @@ public abstract class Character : MonoBehaviour
 
     [SerializeField]
     protected int defensePower = 0;
+    public int DefensePower { get { return defensePower; } }
 
     [SerializeField]
     protected Item weapon;

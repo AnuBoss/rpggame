@@ -102,7 +102,20 @@ public class UIManager : MonoBehaviour
     private Toggle[] toggleAvatar;
     public Toggle[] ToggleAvatar { get { return toggleAvatar; } set { toggleAvatar = value; } }
 
-  
+    [SerializeField]
+    private GameObject charPanel;
+
+    [SerializeField]
+    private TMP_Text charNameText;
+
+    [SerializeField]
+    private TMP_Text statText;
+
+    [SerializeField]
+    private TMP_Text abilityText;
+
+    [SerializeField]
+    private Image heroImage;
 
     void Awake()
     {
@@ -470,6 +483,57 @@ public class UIManager : MonoBehaviour
         {
             Debug.Log($"is Off: {i}");
             PartyManager.instance.UnSelectSingleHeroByToggle(i);
+        }
+    }
+    public void ClearCharPanel()
+    {
+        charNameText.text = "";
+        statText.text = "";
+        abilityText.text = "";
+        heroImage.sprite = null;
+    }
+
+    public void ShowCharPanel()
+    {
+        if (PartyManager.instance.SelectChars.Count == 0)
+            return;
+
+        Hero hero = (Hero)PartyManager.instance.SelectChars[0];
+
+        charNameText.text = hero.CharName;
+
+        string stat = string.Format(
+            "Level: {0} \nExperience: {1}\n" +
+            "Attack Damage: {2}\nDefense Power: {3}",
+            hero.Level, hero.Exp, hero.AttackDamage, hero.DefensePower);
+
+        statText.text = stat;
+
+        string ability = string.Format(
+            "Strength: {0}\nDexterity: {1}\n" +
+            "Constitution: {2}\nIntelligence: {3}\n" +
+            "Wisdom: {4}\nCharisma: {5}",
+            hero.Strength, hero.Dexterity, hero.Constitution, hero.Intelligence,
+            hero.Wisdom, hero.Charisma);
+
+        abilityText.text = ability;
+
+        heroImage.sprite = hero.AvatarPic;
+    }
+
+    public void ToggleCharPanel()
+    {
+        if (!charPanel.activeInHierarchy)
+        {
+            charPanel.SetActive(true);
+            blackImage.SetActive(true);
+            ShowCharPanel();
+        }
+        else
+        {
+            charPanel.SetActive(false);
+            blackImage.SetActive(false);
+            ClearCharPanel();
         }
     }
 }

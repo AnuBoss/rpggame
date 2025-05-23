@@ -4553,6 +4553,10 @@ PrefabInstance:
       value: 100
       objectReference: {fileID: 0}
     - target: {fileID: -1747327633029262491, guid: 45b39a4a3f8ccef4bafe67aeba36f78f, type: 3}
+      propertyPath: charName
+      value: Eve
+      objectReference: {fileID: 0}
+    - target: {fileID: -1747327633029262491, guid: 45b39a4a3f8ccef4bafe67aeba36f78f, type: 3}
       propertyPath: shieldobj
       value: 
       objectReference: {fileID: 0}
@@ -7392,6 +7396,10 @@ PrefabInstance:
       value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 4078347238888445035, guid: 36b4b824fc10d7d4eb46dc0484090e5d, type: 3}
+      propertyPath: charName
+      value: Jopa
+      objectReference: {fileID: 0}
+    - target: {fileID: 4078347238888445035, guid: 36b4b824fc10d7d4eb46dc0484090e5d, type: 3}
       propertyPath: weaponHand
       value: 
       objectReference: {fileID: 744532762}
@@ -7826,7 +7834,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -7843,8 +7851,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -9606,7 +9614,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1069453925}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1443062266}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: ToggleCharPanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1069453925
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10750,7 +10770,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -10767,8 +10787,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -12647,6 +12667,11 @@ MonoBehaviour:
   - {fileID: 734336796}
   - {fileID: 694024351}
   - {fileID: 926906596}
+  charPanel: {fileID: 726869119}
+  charNameText: {fileID: 2063734117}
+  statText: {fileID: 1273519477}
+  abilityText: {fileID: 789774593}
+  heroImage: {fileID: 1481881164}
 --- !u!1 &1449513400
 GameObject:
   m_ObjectHideFlags: 0
@@ -14765,8 +14790,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 225e16e973bae0a49a7d6c6782edab69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  avatarPic: {fileID: 0}
-  charName: 
+  avatarPic: {fileID: 21300000, guid: d4853c4778872bd409c054fc5f9d0aa4, type: 3}
+  charName: Se
   state: 0
   ringSelection: {fileID: 1748094476}
   magicSkills: []
@@ -14817,6 +14842,14 @@ MonoBehaviour:
   weaponHand: {fileID: 0}
   weaponobj: {fileID: 0}
   weaponPower: 0
+  exp: 0
+  level: 0
+  strength: 0
+  dexterity: 0
+  constitution: 0
+  intelligence: 0
+  wisdom: 0
+  charisma: 0
 --- !u!1 &1657074311
 GameObject:
   m_ObjectHideFlags: 0
