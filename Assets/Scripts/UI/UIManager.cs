@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEditor.PackageManager.Requests;
@@ -466,6 +467,12 @@ public class UIManager : MonoBehaviour
         for (int i = 0; i < PartyManager.instance.Members.Count; i++)
         {
             toggleAvatar[i].gameObject.SetActive(true);
+            Hero hero = (Hero)PartyManager.instance.Members[i];
+            Image avatarImg = toggleAvatar[i].transform.Find("AvatarImage").GetComponent<Image>();
+            if (avatarImg != null)
+            {
+                avatarImg.sprite = hero.AvatarPic;
+            }
         }
         toggleAvatar[0].isOn = true; //Select first hero
     }
@@ -484,6 +491,8 @@ public class UIManager : MonoBehaviour
             Debug.Log($"is Off: {i}");
             PartyManager.instance.UnSelectSingleHeroByToggle(i);
         }
+
+        ShowCharPanel();
     }
     public void ClearCharPanel()
     {
@@ -498,7 +507,8 @@ public class UIManager : MonoBehaviour
         if (PartyManager.instance.SelectChars.Count == 0)
             return;
 
-        Hero hero = (Hero)PartyManager.instance.SelectChars[0];
+        //Hero hero = (Hero)PartyManager.instance.SelectChars[0];
+        Hero hero = (Hero)PartyManager.instance.SelectChars.Last();
 
         charNameText.text = hero.CharName;
 
