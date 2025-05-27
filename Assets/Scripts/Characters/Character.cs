@@ -65,6 +65,7 @@ public abstract class Character : MonoBehaviour
 
     protected VFXManager vfxManager;
     protected InventoryManager invManager;
+    protected PartyManager partyManager;
 
     [SerializeField] protected int curHp = 10;
     public int CurHP
@@ -142,7 +143,6 @@ public abstract class Character : MonoBehaviour
     {
         navAgent = GetComponent<NavMeshAgent>();
         anim =GetComponent<Animator>();
-
 
     }
 
@@ -326,11 +326,12 @@ public abstract class Character : MonoBehaviour
 
         inventoryItems = new Item[16];
     }*/
-    public void charInit(VFXManager vfxM, UIManager uiM, InventoryManager invM)
+    public void CharInit(VFXManager vfxM, UIManager uiM, InventoryManager invM, PartyManager partyM)
     {
         vfxManager = vfxM;
         uiManager = uiM;
         invManager = invM;
+        partyManager = partyM;
 
         inventoryItems = new Item[InventoryManager.MAXSLOT];
     }

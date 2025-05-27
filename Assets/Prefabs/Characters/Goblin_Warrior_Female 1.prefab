@@ -3386,6 +3386,7 @@ MonoBehaviour:
     icon: {fileID: 0}
     power: 0
     prefabID: 0
+    normalPrice: 0
   shield:
     id: 0
     itemName: 
@@ -3393,6 +3394,7 @@ MonoBehaviour:
     icon: {fileID: 0}
     power: 0
     prefabID: 0
+    normalPrice: 0
   shieldHand: {fileID: 402320}
   shieldobj: {fileID: 0}
   defensePower: 0
@@ -3403,9 +3405,11 @@ MonoBehaviour:
     icon: {fileID: 0}
     power: 0
     prefabID: 0
+    normalPrice: 0
   weaponHand: {fileID: 0}
   weaponobj: {fileID: 0}
   weaponPower: 0
+  expDrop: 30
 --- !u!114 &8275975793714443077
 MonoBehaviour:
   m_ObjectHideFlags: 0

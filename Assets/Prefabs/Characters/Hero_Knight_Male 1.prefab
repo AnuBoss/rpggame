@@ -3008,6 +3008,7 @@ MonoBehaviour:
     icon: {fileID: 0}
     power: 0
     prefabID: 0
+    normalPrice: 0
   shield:
     id: 0
     itemName: 
@@ -3015,6 +3016,7 @@ MonoBehaviour:
     icon: {fileID: 0}
     power: 0
     prefabID: 0
+    normalPrice: 0
   shieldHand: {fileID: 0}
   shieldobj: {fileID: 0}
   defensePower: 0
@@ -3025,17 +3027,19 @@ MonoBehaviour:
     icon: {fileID: 0}
     power: 0
     prefabID: 0
+    normalPrice: 0
   weaponHand: {fileID: 0}
   weaponobj: {fileID: 0}
   weaponPower: 0
   exp: 0
-  level: 0
-  strength: 0
-  dexterity: 0
-  constitution: 0
-  intelligence: 0
-  wisdom: 0
-  charisma: 0
+  level: 1
+  nextExp: 30
+  strength: 10
+  dexterity: 17
+  constitution: 13
+  intelligence: 19
+  wisdom: 8
+  charisma: 12
 --- !u!114 &-6530389510410610908
 MonoBehaviour:
   m_ObjectHideFlags: 0
