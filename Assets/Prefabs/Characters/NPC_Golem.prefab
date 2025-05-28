@@ -1793,7 +1793,7 @@ MonoBehaviour:
     loadId: 0
     shootId: 0
   isMagicMode: 0
-  curHp: 10
+  curHp: 100
   maxHP: 100
   curCharTarget: {fileID: 0}
   attackRange: 2
@@ -1809,6 +1809,7 @@ MonoBehaviour:
     icon: {fileID: 0}
     power: 0
     prefabID: 0
+    normalPrice: 0
   shield:
     id: 0
     itemName: 
@@ -1816,6 +1817,7 @@ MonoBehaviour:
     icon: {fileID: 0}
     power: 0
     prefabID: 0
+    normalPrice: 0
   shieldHand: {fileID: 0}
   shieldobj: {fileID: 0}
   defensePower: 0
@@ -1826,9 +1828,13 @@ MonoBehaviour:
     icon: {fileID: 0}
     power: 0
     prefabID: 0
+    normalPrice: 0
   weaponHand: {fileID: 0}
   weaponobj: {fileID: 0}
   weaponPower: 0
+  isShopKeeper: 0
+  shopItems: []
+  npcMoney: 3000
 --- !u!1 &1296846706719130
 GameObject:
   m_ObjectHideFlags: 0

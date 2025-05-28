@@ -1196,7 +1196,7 @@ GameObject:
   - component: {fileID: -5332468465517105896}
   m_Layer: 6
   m_Name: Hero_Knight_Female 1
-  m_TagString: Untagged
+  m_TagString: Hero
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1328,7 +1328,7 @@ MonoBehaviour:
     loadId: 0
     shootId: 0
   isMagicMode: 0
-  curHp: 10
+  curHp: 100
   maxHP: 100
   curCharTarget: {fileID: 0}
   attackRange: 2
