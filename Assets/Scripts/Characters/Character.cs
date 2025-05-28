@@ -181,6 +181,7 @@ public abstract class Character : MonoBehaviour
     public void ToggleRingSelection(bool flag)
     {
         ringSelection.SetActive(flag);
+       
     }
 
     public void ToAttackCharacter(Character target)
