@@ -86,10 +86,18 @@ void Start()
 
             Npc npc = curCharTarget.GetComponent<Npc>();
 
-            if (npc.IsShopKeeper)
-                uiManager.PrepareShopPanel(npc, this);
+            if (npc != null)
+            {
+                if (npc.IsShopKeeper)
+                    uiManager.PrepareShopPanel(npc, this);
+                else
+                    uiManager.PrepareDialogueBox(npc);
+            }
             else
-                uiManager.PrepareDialogueBox(npc);
+            {
+                Hero hero = curCharTarget.GetComponent<Hero>();
+                uiManager.PrepareHeroJoinParty(hero);
+            }
         }
     }
 
