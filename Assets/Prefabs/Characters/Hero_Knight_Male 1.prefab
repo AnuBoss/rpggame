@@ -3041,6 +3041,7 @@ MonoBehaviour:
   intelligence: 19
   wisdom: 8
   charisma: 12
+  prefabId: 1
 --- !u!114 &-6530389510410610908
 MonoBehaviour:
   m_ObjectHideFlags: 0

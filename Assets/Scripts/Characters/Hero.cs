@@ -46,6 +46,12 @@ public class Hero : Character
     private int charisma;
     public int Charisma
     { get { return charisma; } set { charisma = value; } }
+
+    [SerializeField]
+    private int prefabId; //according to.GameManager
+    public int PrefabID { get { return prefabId; } }
+
+
 // Start is called once before the first execution of Update after the MonoBehaviour is created
 void Start()
     {

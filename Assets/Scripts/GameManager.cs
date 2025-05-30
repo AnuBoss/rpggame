@@ -15,7 +15,17 @@ public class GameManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        GeneratePlayerHero();
+        if (Settings.isNewGame)
+        {
+            Settings.isNewGame = false;
+            GeneratePlayerHero();
+        }
+
+        if (Settings.isWarping)
+        {
+            Settings.isWarping = false;
+            WarpPlayers();
+        }
     }
 
     // Update is called once per frame
@@ -36,6 +46,17 @@ public class GameManager : MonoBehaviour
         Character hero = heroObj.GetComponent<Character>();
         PartyManager.instance.Members.Add(hero);
 
-       
+        hero.CharInit(VFXManager.instance, UIManager.instance,
+                InventoryManager.instance, PartyManager.instance);
+
+        InventoryManager.instance.AddItem(hero, 0);//health potion
+        InventoryManager.instance.AddItem(hero, 2);//Shield.A
+
+
+    }
+
+    private void WarpPlayers()
+    {
+        PartyManager.instance.LoadAllHeroData();
     }
 }

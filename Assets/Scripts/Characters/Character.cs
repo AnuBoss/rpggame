@@ -71,6 +71,7 @@ public abstract class Character : MonoBehaviour
     public int CurHP
     {
         get { return curHp; }
+        set { curHp = value; }
     }
 
     [SerializeField]
@@ -88,7 +89,8 @@ public abstract class Character : MonoBehaviour
         get { return attackRange; }
     }
     [SerializeField] protected int attackDamage = 3;
-    public int AttackDamage { get { return attackDamage; } }
+    public int AttackDamage { get { return attackDamage; } set { attackDamage = value; } }
+
 
 
     [SerializeField] protected float attackCoolDown = 2f;
@@ -122,9 +124,13 @@ public abstract class Character : MonoBehaviour
 
     [SerializeField]
     protected int defensePower = 0;
-    public int DefensePower { get { return defensePower; } }
+    public int DefensePower
+    {
+        get { return defensePower; }
+        set { defensePower = value; }
+    }
 
-    [SerializeField]
+        [SerializeField]
     protected Item weapon;
     public Item Weapon { get { return weapon; } set { weapon = value; } }
 
@@ -136,6 +142,11 @@ public abstract class Character : MonoBehaviour
 
     [SerializeField]
     protected int weaponPower = 0;
+    public int WeaponPower
+    {
+        get { return weaponPower; }
+        set { weaponPower = value; }
+    }
 
 
     protected UIManager uiManager;
