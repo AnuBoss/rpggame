@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using static UnityEditor.Progress;
+using UnityEngine.TextCore.Text;
 
 public class InventoryManager : MonoBehaviour
 {
@@ -33,7 +34,7 @@ public class InventoryManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 
     public bool AddItem(Character chracter, int id)

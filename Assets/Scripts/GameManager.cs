@@ -51,6 +51,7 @@ public class GameManager : MonoBehaviour
 
         InventoryManager.instance.AddItem(hero, 0);//health potion
         InventoryManager.instance.AddItem(hero, 2);//Shield.A
+        InventoryManager.instance.AddItem(hero, 1);
 
 
     }

@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.TextCore.Text;
+
 
 public class PartyManager : MonoBehaviour
 {
@@ -49,7 +51,7 @@ public class PartyManager : MonoBehaviour
         */
        
         SelectSingleHero(0);
-        members[0].MagicSkills.Add(new Magic(VFXManager.instance.MagicData[0]));
+       /* members[0].MagicSkills.Add(new Magic(VFXManager.instance.MagicData[0]));
         members[0].MagicSkills.Add(new Magic(VFXManager.instance.MagicData[2]));
         members[0].MagicSkills.Add(new Magic(VFXManager.instance.MagicData[3]));
 
@@ -60,7 +62,7 @@ public class PartyManager : MonoBehaviour
         InventoryManager.instance.AddItem(members[0], 1);
         InventoryManager.instance.AddItem(members[0], 2);
         InventoryManager.instance.AddItem(members[0], 3);
-
+       */
 
         UIManager.instance.ShowMagicToggles();
     }
@@ -112,7 +114,7 @@ public class PartyManager : MonoBehaviour
 
     public void SelectSingleHeroByToggle(int i)
     {
-        Debug. Log($"Select. {i}");
+        Debug.Log($"Select. {i}");
 
         if (selectChars.Contains(members[i]))
         {
@@ -193,15 +195,20 @@ public class PartyManager : MonoBehaviour
 
             for (int k = 0; k < hero.InventoryItems.Length; k++)
             {
+                
                 if (hero.InventoryItems[k] == null)
                 {
                     heroData[i].inventoryItemIds[k] = -1;
+
                 }
                 else
                 {
                     heroData[i].inventoryItemIds[k] = hero.InventoryItems[k].ID;
                 }
             }
+
+            Debug.Log($"InventoryItems.Length: {hero.InventoryItems.Length}");
+            Debug.Log($"inventoryItemIds.Length: {heroData[i].inventoryItemIds.Length}");
 
             heroData[i].attackDamage = hero.AttackDamage;
             heroData[i].defensePower = hero.DefensePower;

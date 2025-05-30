@@ -12399,11 +12399,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6702794424645088297, guid: 5827239d6a5d16544be8c298db15345c, type: 3}
       propertyPath: toMapName
-      value: Forest01
+      value: VillageScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 6702794424645088297, guid: 5827239d6a5d16544be8c298db15345c, type: 3}
+      propertyPath: enterPointId
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7392038860596402825, guid: 5827239d6a5d16544be8c298db15345c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 58
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 7392038860596402825, guid: 5827239d6a5d16544be8c298db15345c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -12411,7 +12415,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7392038860596402825, guid: 5827239d6a5d16544be8c298db15345c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 27
+      value: 74
       objectReference: {fileID: 0}
     - target: {fileID: 7392038860596402825, guid: 5827239d6a5d16544be8c298db15345c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -13509,7 +13513,7 @@ Transform:
   m_GameObject: {fileID: 1282469808}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 58, y: 10, z: 31}
+  m_LocalPosition: {x: 20, y: 10, z: 69}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

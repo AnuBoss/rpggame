@@ -150,6 +150,23 @@ void Start()
             level++;
             nextExp = level * 30;
             UpdateStat();
+
+            switch (level)
+            {
+                case 3:
+                    magicSkills.Add(new Magic(vfxManager.MagicData[0]));
+                    uiManager.ShowMagicToggles();
+                    break;
+
+                case 5:
+                    magicSkills.Add(new Magic(vfxManager.MagicData[1]));
+                    uiManager.ShowMagicToggles();
+                    break;
+                case 10:
+                    magicSkills.Add(new Magic(vfxManager.MagicData[3]));
+                    uiManager.ShowMagicToggles();
+                    break;
+            }
         }
     }
 }
