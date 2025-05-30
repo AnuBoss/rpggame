@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33fda9d2cc29e0f47a597ceab188eae3, type: 3}
+  m_Name: 01_FirstSword
+  m_EditorClassIdentifier: 
+  questId: 1
+  type: 1
+  status: 0
+  questName: Kill Gobiln
+  questDetail: Kill 6 Gobiln
+  questItemId: 4
+  questDialogue:
+  - Hey! Adventurer!
+  - Recently, a group of goblins has been disturbing the village. Please help take
+    care of them.
+  - Try exploring the caves to the east of the forest. They seem to be hiding there.
+  answerNext:
+  - Hi, nice to meet you.
+  - Do you have any additional information?
+  answerAccept: Sure, I'll go take care of it.
+  answerReject: I don't care about your business.
+  rewardItemId: 1
+  rewardExp: 600
+  questionInProgress: Did you manage to take care of the goblins, Adventurer?
+  answerFinish: Done! None of them survived.
+  answerNotFinish: Not yet, please wait.
