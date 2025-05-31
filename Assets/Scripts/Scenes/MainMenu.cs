@@ -19,6 +19,14 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene("SelectChar");
     }
+    public void Setting()
+    {
+        SceneManager.LoadScene("Setting");
+    }
+    public void LondMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
     public void ExitGame()
     {
         Application.Quit();

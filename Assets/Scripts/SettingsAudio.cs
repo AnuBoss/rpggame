@@ -2,9 +2,9 @@ using UnityEngine;
 using UnityEngine.UI;
 public class SettingsAudio : MonoBehaviour
 {
-    [SerializeField] Slider bgmVloume;
-    [SerializeField] Slider masterVloume;
-    [SerializeField] Slider sfxVloume;
+    [SerializeField] Slider MasterVolume;
+    [SerializeField] Slider BGMVolume;
+    [SerializeField] Slider SFXVolume;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -19,19 +19,19 @@ public class SettingsAudio : MonoBehaviour
 
     public void OnMasterVolumeChanged()
     {
-        float value = masterVloume.value;
+        float value = MasterVolume.value;
         AudioManager.instance.SetMasterVolume(value);
     }
 
     public void OnBGMVolumeChanged()
     {
-        float value = bgmVloume.value;
+        float value = BGMVolume.value;
         AudioManager.instance.SetBGMVolume(value);
     }
 
     public void OnSFXVolumeChanged()
     {
-        float value = sfxVloume.value;
+        float value = SFXVolume.value;
         AudioManager.instance.SetSFXVolume(value);
     }
 }
