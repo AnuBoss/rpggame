@@ -289,7 +289,7 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 0
+  m_ChildAlignment: 1
   m_Spacing: 0
   m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 0
@@ -3021,7 +3021,7 @@ RectTransform:
   m_Father: {fileID: 16025851}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 0.9998361}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -3721,7 +3721,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 364683972}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.9998361
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -3797,7 +3797,7 @@ RectTransform:
   m_Father: {fileID: 2035451841}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 0.9998361}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -5278,7 +5278,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 302263190}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.9998361
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -20890,7 +20890,7 @@ MonoBehaviour:
   m_Horizontal: 0
   m_Vertical: 1
   m_MovementType: 1
-  m_Elasticity: 0.1
+  m_Elasticity: 5
   m_Inertia: 1
   m_DecelerationRate: 0.135
   m_ScrollSensitivity: 1
@@ -24810,6 +24810,10 @@ PrefabInstance:
       propertyPath: 'itemPrefabs.Array.data[10]'
       value: 
       objectReference: {fileID: 172868, guid: 6dd4341b301b885448f53af95f08ac15, type: 3}
+    - target: {fileID: 3517113301720851632, guid: 6b90f5389a06f254b8d214fbef72d29c, type: 3}
+      propertyPath: partyMoney
+      value: 100000
+      objectReference: {fileID: 0}
     - target: {fileID: 4408654545526261115, guid: 6b90f5389a06f254b8d214fbef72d29c, type: 3}
       propertyPath: questData.Array.size
       value: 2
