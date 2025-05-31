@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.TextCore.Text;
+using static UnityEditor.Progress;
 
 
 public class PartyManager : MonoBehaviour
@@ -265,7 +266,8 @@ public class PartyManager : MonoBehaviour
             for (int j = 0; j < heroData[i].magicIds.Count; j++)
             {
                 int magicId = heroData[i].magicIds[j];
-                hero.MagicSkills.Add(new Magic(VFXManager.instance.MagicData[magicId]));
+                if (magicId != -1)
+                    hero.MagicSkills.Add(new Magic(VFXManager.instance.MagicData[magicId]));
             }
 
             for (int k = 0; k < heroData[i].inventoryItemIds.Length; k++)
