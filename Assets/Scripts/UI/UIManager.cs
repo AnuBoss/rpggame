@@ -862,7 +862,7 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    private void SetupHeroJoinPartyPanel(Hero hero)
+    /*private void SetupHeroJoinPartyPanel(Hero hero)
     {
         curHeroToJoin = hero;
 
@@ -873,7 +873,32 @@ public class UIManager : MonoBehaviour
 
         btnJoinParty.SetActive(true);
         btnNotJoinParty.SetActive(true);
+    }*/
+
+    private void SetupHeroJoinPartyPanel(Hero hero)
+    {
+        curHeroToJoin = hero;
+
+        npcImage.sprite = hero.AvatarPic;
+        npcNameText.text = hero.CharName;
+
+        // ตรวจสอบก่อนว่าอยู่ในปาร์ตี้แล้วหรือยัง
+        if (PartyManager.instance.IsHeroInParty(hero))
+        {
+            dialogueText.text = $"{hero.CharName} is already in your party.";
+
+            // ไม่ให้กดปุ่ม Join ได้
+            btnJoinParty.SetActive(false);
+            btnNotJoinParty.SetActive(true);
+        }
+        else
+        {
+            dialogueText.text = "I want to join your party.";
+            btnJoinParty.SetActive(true);
+            btnNotJoinParty.SetActive(true);
+        }
     }
+
 
     public void PrepareHeroJoinParty(Hero hero)
     {
@@ -882,10 +907,27 @@ public class UIManager : MonoBehaviour
         ToggleDialogueBox(true);
     }
 
-    public void AnswerJoinParty() // map.with.ButtonJoinParty
+   /* public void AnswerJoinParty() // map.with.ButtonJoinParty
     {
         PartyManager.instance.HeroJoinParty(curHeroToJoin);
         MapToggleAvatar();
+        curHeroToJoin = null;
+        ToggleDialogueBox(false);
+    }*/
+  
+    public void AnswerJoinParty()
+    {
+        if (!PartyManager.instance.IsHeroInParty(curHeroToJoin))
+        {
+            PartyManager.instance.HeroJoinParty(curHeroToJoin);
+            MapToggleAvatar();
+        }
+        else
+        {
+            Debug.LogWarning("Hero is already in party.");
+            // คุณอาจแสดงข้อความแจ้งเตือนใน UI ได้ด้วย เช่น Toast
+        }
+
         curHeroToJoin = null;
         ToggleDialogueBox(false);
     }
@@ -895,6 +937,8 @@ public class UIManager : MonoBehaviour
         curHeroToJoin = null;
         ToggleDialogueBox(false);
     }
+
+
 
    
 }

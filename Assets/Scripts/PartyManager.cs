@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.TextCore.Text;
 
@@ -168,10 +169,31 @@ public class PartyManager : MonoBehaviour
         }
     }
 
+    /* public bool HeroJoinParty(Character hero)
+     {
+         if (members.Count >= 6)
+             return false;
+
+         hero.CharInit(VFXManager.instance, UIManager.instance,
+             InventoryManager.instance, this);
+
+         members.Add(hero);
+         return true;
+     }*/
+
     public bool HeroJoinParty(Character hero)
     {
-        if (members.Count >= 6)
+        if (members.Contains(hero))
+        {
+            Debug.LogWarning($"{hero.CharName} is already in the party.");
             return false;
+        }
+
+        if (members.Count >= 6)
+        {
+            Debug.LogWarning("Party is full.");
+            return false;
+        }
 
         hero.CharInit(VFXManager.instance, UIManager.instance,
             InventoryManager.instance, this);
@@ -179,6 +201,7 @@ public class PartyManager : MonoBehaviour
         members.Add(hero);
         return true;
     }
+
 
     public void SaveAllHeroData()
     {
@@ -263,4 +286,10 @@ public class PartyManager : MonoBehaviour
             members.Add(hero);
         }
     }
+
+    public bool IsHeroInParty(Hero hero)
+    {
+        return SelectChars.Contains(hero);
+    }
+
 }
