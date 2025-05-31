@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 33fda9d2cc29e0f47a597ceab188eae3, type: 3}
-  m_Name: 01_FirstSword
+  m_Name: 02_FirstSword
   m_EditorClassIdentifier: 
-  questId: 1
+  questId: 2
   type: 1
   status: 0
   questName: Kill Gobiln

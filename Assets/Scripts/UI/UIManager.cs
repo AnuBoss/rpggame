@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Linq;
 using TMPro;
 using Unity.VisualScripting;
@@ -187,6 +187,8 @@ public class UIManager : MonoBehaviour
 
     [SerializeField]
     private GameObject btnNotJoinParty;
+
+    bool noQuest = false;
 
     void Awake()
     {
@@ -425,7 +427,7 @@ public class UIManager : MonoBehaviour
     private void SetupDialoguePanel(Npc npc)
     {
         index = 0;
-
+       
         npcImage.sprite = npc.AvatarPic;
         npcNameText.text = npc.CharName;
 
@@ -457,6 +459,14 @@ public class UIManager : MonoBehaviour
 
             if (newQuest != null)  //There. is.a.new.Quest
                 StartQuestDialogue(newQuest);
+            if (newQuest == null)
+            {
+                dialogueText.text = "There are no more.";
+                btnNextText.text = "Okey";
+                btnNext.SetActive(true);
+                noQuest = true;
+
+            }
         }
  
     }
@@ -479,6 +489,12 @@ public class UIManager : MonoBehaviour
 
     public void AnswerNext() //map with ButtonNext
     {
+        if (noQuest)
+        {
+            ToggleDialogueBox(false); // ปิดหน้าต่าง
+            return;
+        }
+
         index++;
         dialogueText.text = QuestManager.instance.NextDialogue(index);
 
