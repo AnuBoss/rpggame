@@ -29,6 +29,12 @@ public class InventoryManager : MonoBehaviour
         AddItemShopToNPC(1, 1);//sword.A
         AddItemShopToNPC(1, 2);//shield.A
         AddItemShopToNPC(1, 3); //magic potion
+        AddItemShopToNPC(1, 4);
+        AddItemShopToNPC(1, 5);
+        AddItemShopToNPC(1, 6);
+        AddItemShopToNPC(1, 7);
+        AddItemShopToNPC(1, 8);
+        AddItemShopToNPC(1, 9);
     }
 
     // Update is called once per frame

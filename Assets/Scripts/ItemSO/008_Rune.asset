@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3cbca9e3857229546af9794141d5d9b7, type: 3}
-  m_Name: 004_GoblinMeat
+  m_Name: 008_Rune
   m_EditorClassIdentifier: 
-  id: 4
-  itemName: ' Goblin Meat'
-  type: 6
-  icon: {fileID: 21300000, guid: e00343648dfdc2e4db991f3b08dd8384, type: 3}
+  id: 8
+  itemName: Rune
+  type: 7
+  icon: {fileID: 21300000, guid: 2c9e1e10abb92f34f9a160b63dbe8ff1, type: 3}
   power: 0
-  prefabID: 10
-  normalPrice: 50
+  prefabID: 0
+  normalPrice: 1350
