@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: HeroData
   m_EditorClassIdentifier: 
   prefabId: 0
-  curHp: 0
-  magicIds: 
-  inventoryItemIds: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-  attackDamage: 0
+  curHp: 104
+  magicIds: 0000000000000000000000000000000000000000
+  inventoryItemIds: 000000000200000000000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+  attackDamage: 3
   defensePower: 0
   exp: 0
-  level: 0
-  nextExp: 0
+  level: 1
+  nextExp: 30

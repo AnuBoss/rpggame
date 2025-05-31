@@ -879,4 +879,6 @@ public class UIManager : MonoBehaviour
         curHeroToJoin = null;
         ToggleDialogueBox(false);
     }
+
+   
 }

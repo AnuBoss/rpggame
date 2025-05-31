@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04189e9a69ecbbb44aae18e2f80fa19d, type: 3}
   m_Name: HeroData 1
   m_EditorClassIdentifier: 
-  prefabId: 0
-  curHp: 0
-  magicIds: 
-  inventoryItemIds: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-  attackDamage: 0
+  prefabId: 1
+  curHp: 100
+  magicIds: 0000000000000000000000000000000000000000
+  inventoryItemIds: ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+  attackDamage: 3
   defensePower: 0
   exp: 0
-  level: 0
-  nextExp: 0
+  level: 1
+  nextExp: 30
