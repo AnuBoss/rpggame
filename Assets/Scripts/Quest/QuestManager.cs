@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 
 public class QuestManager : MonoBehaviour
@@ -22,6 +23,7 @@ public class QuestManager : MonoBehaviour
 
     public static QuestManager instance;
 
+    [SerializeField] private GameObject availableMarker;
     void Awake()
     {
         instance = this;
@@ -64,7 +66,17 @@ public class QuestManager : MonoBehaviour
         Quest quest = npc.CheckQuestList(status);
         curQuest = quest;
 
-        return quest;
+        if (quest != null)
+        {
+            availableMarker.SetActive(true);
+        }
+        else 
+        {
+            availableMarker.SetActive(false);
+        }
+
+
+            return quest;
     }
 
     private bool CheckItemToDelivery()
@@ -82,6 +94,7 @@ public class QuestManager : MonoBehaviour
         {
             case QuestType.Delivery:
                 success = CheckItemToDelivery();
+               
                 break;
         }
         return success;

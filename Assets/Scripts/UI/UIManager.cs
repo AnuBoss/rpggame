@@ -190,6 +190,9 @@ public class UIManager : MonoBehaviour
 
     bool noQuest = false;
 
+    [SerializeField]
+    private Image invAvatarImage;
+
     void Awake()
     {
         instance = this;
@@ -313,8 +316,14 @@ public class UIManager : MonoBehaviour
 
     public void ClearInventory()
     {
+
+        if (invAvatarImage != null)
+        {
+            invAvatarImage.sprite = null;
+            invAvatarImage.enabled = false;
+        }
         //Clear. Slots
-        for(int i = 0; i < slots.Length; i++)
+        for (int i = 0; i < slots.Length; i++)
         {
             if (slots[i].transform.childCount > 0)
             {
@@ -332,6 +341,12 @@ public class UIManager : MonoBehaviour
 
         // Show inventory of the first selected character
         Character hero = PartyManager.instance.SelectChars[0];
+
+        if (invAvatarImage != null)
+        {
+            invAvatarImage.sprite = hero.AvatarPic;
+            invAvatarImage.enabled = (hero.AvatarPic != null);
+        }
 
         Debug.Log($"Showing inventory for: {hero.name}");
 
@@ -939,6 +954,4 @@ public class UIManager : MonoBehaviour
     }
 
 
-
-   
 }
