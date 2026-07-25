@@ -169,4 +169,28 @@ void Start()
             }
         }
     }
+
+    protected override void Die()
+    {
+        base.Die();
+
+       
+        bool defeated = partyManager != null && partyManager.IsPartyDefeated();
+
+        if (defeated)
+        {
+           
+            if (uiManager != null)
+                uiManager.ShowGameOver();
+        }
+        else
+        {
+           
+            if (partyManager != null)
+                partyManager.RemoveDeadHero(this);
+
+            if (uiManager != null)
+                uiManager.MapToggleAvatar();
+        }
+    }
 }

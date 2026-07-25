@@ -1,12 +1,11 @@
-﻿using System;
+﻿
+using System.Collections.Generic;
 using System.Linq;
 using TMPro;
-using Unity.VisualScripting;
-using UnityEditor.PackageManager.Requests;
-using UnityEditor.Rendering;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using System.Collections.Generic;
+using System.Collections;
 
 public class UIManager : MonoBehaviour
 {
@@ -193,6 +192,25 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     private Image invAvatarImage;
 
+    [Header("Menu")]
+    [SerializeField]
+    private GameObject menuPanel;
+
+    [SerializeField]
+    private string menuSceneName = "MainMenu";
+
+    [Header("Game Over")]
+    [SerializeField]
+    private GameObject gameOverPanel;
+
+    [SerializeField]
+    private string selectCharSceneName = "SelectChar";
+
+    private bool isGameOver = false;
+
+    [SerializeField]
+    private float gameOverDelay = 3f;
+
     void Awake()
     {
         instance = this;
@@ -211,6 +229,14 @@ public class UIManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             togglePauseUnpause.isOn = !togglePauseUnpause.isOn;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (menuPanel.activeInHierarchy)
+                CloseMenuPanel();
+            else
+                OpenMenuPanel();
         }
     }
 
@@ -940,7 +966,7 @@ public class UIManager : MonoBehaviour
         else
         {
             Debug.LogWarning("Hero is already in party.");
-            // คุณอาจแสดงข้อความแจ้งเตือนใน UI ได้ด้วย เช่น Toast
+            
         }
 
         curHeroToJoin = null;
@@ -953,5 +979,77 @@ public class UIManager : MonoBehaviour
         ToggleDialogueBox(false);
     }
 
+   
+    public void OpenMenuPanel()
+    {
+        menuPanel.SetActive(true);
+        blackImage.SetActive(true);
+        Time.timeScale = 0;   
+    }
 
+    public void CloseMenuPanel()
+    {
+        menuPanel.SetActive(false);
+        blackImage.SetActive(false);
+        Time.timeScale = 1;
+    }
+
+    public void GoToMenuScene()
+    {
+        
+        Time.timeScale = 1;
+
+       
+        if (togglePauseUnpause != null)
+            togglePauseUnpause.isOn = false;
+
+        SceneManager.LoadScene(menuSceneName);
+    }
+
+    public void ShowGameOver()
+    {
+        if (isGameOver)   
+            return;
+
+        isGameOver = true;
+        StartCoroutine(ShowGameOverRoutine());
+    }
+    private IEnumerator ShowGameOverRoutine()
+    {
+        
+        yield return new WaitForSeconds(gameOverDelay);
+
+        gameOverPanel.SetActive(true);
+        if (blackImage != null)
+            blackImage.SetActive(true);
+
+        Time.timeScale = 0f;  
+    }
+
+    //  MainMenu
+    public void GameOverToMainMenu()
+    {
+        Time.timeScale = 1f;
+        isGameOver = false;
+        SceneManager.LoadScene(menuSceneName);
+    }
+
+    //  Respawn 
+    public void GameOverRespawn()
+    {
+        Time.timeScale = 1f;
+        isGameOver = false;
+        SceneManager.LoadScene(selectCharSceneName);
+    }
+
+    //  Exit
+    public void GameOverExit()
+    {
+        Time.timeScale = 1f;
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+    Application.Quit();
+#endif
+    }
 }

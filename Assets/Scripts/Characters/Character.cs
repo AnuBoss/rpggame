@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
-using static UnityEngine.Rendering.DebugUI;
+
 
 public enum CharState
 {
@@ -478,24 +478,12 @@ public abstract class Character : MonoBehaviour
 
     public void EquipWeapon(Item item)
     {
-        if (invManager == null)
-        {
-            Debug.LogError($"[{charName}] invManager = null → CharInit() ");
-            invManager = InventoryManager.instance;   // fallback กันตาย
-        }
-
-        if (weaponHand == null)
-        {
-            Debug.LogError($"[{charName}] weaponHand  assign  Inspector!");
-            return;
-        }
+      
         weaponobj = Instantiate(invManager.ItemPrefabs[item.PrefabID], weaponHand);
         weaponobj.transform.localPosition = new Vector3(7.5f, 2f, 8f);
         weaponobj.transform.Rotate(90f, 0f, 180f, Space.Self);
 
-        Debug.Log($"[{charName}] equip {item.ItemName} → parent: {weaponobj.transform.parent.name}, " +
-              $"world pos: {weaponobj.transform.position}");
-
+       
         weaponPower += item.Power;
         weapon = item;
     }

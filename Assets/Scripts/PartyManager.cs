@@ -1,9 +1,7 @@
-using System;
+﻿
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
-using UnityEngine.TextCore.Text;
-using static UnityEditor.Progress;
+
 
 
 public class PartyManager : MonoBehaviour
@@ -231,6 +229,7 @@ public class PartyManager : MonoBehaviour
                 }
             }
 
+            Debug.Log($"[SAVE] {hero.CharName} weaponSlot17 = {heroData[i].inventoryItemIds[17]}");
             Debug.Log($"InventoryItems.Length: {hero.InventoryItems.Length}");
             Debug.Log($"inventoryItemIds.Length: {heroData[i].inventoryItemIds.Length}");
 
@@ -275,8 +274,21 @@ public class PartyManager : MonoBehaviour
                 int itemId = heroData[i].inventoryItemIds[k];
                 if (itemId != -1)
                 {
-                    hero.InventoryItems[k] = new Item(InventoryManager.instance.ItemData[itemId]);
+                    Item loadedItem = new Item(InventoryManager.instance.ItemData[itemId]);
+                    hero.InventoryItems[k] = loadedItem;
+
+                   
+                    switch (k)
+                    {
+                        case 16:
+                            hero.EquipShield(loadedItem);
+                            break;
+                        case 17:
+                            hero.EquipWeapon(loadedItem);
+                            break;
+                    }
                 }
+               
             }
 
             hero.AttackDamage = heroData[i].attackDamage;
@@ -294,4 +306,31 @@ public class PartyManager : MonoBehaviour
         return SelectChars.Contains(hero);
     }
 
+    public bool IsPartyDefeated()
+    {
+        if (members.Count == 0)
+            return false;
+
+        foreach (Character c in members)
+        {
+            
+            if (c != null && c.CurHP > 0)
+                return false;  
+        }
+
+        return true;  
+    }
+
+    public void RemoveDeadHero(Character hero)
+    {
+        if (hero == null)
+            return;
+
+        hero.ToggleRingSelection(false);  
+
+        if (selectChars.Contains(hero))
+            selectChars.Remove(hero);
+
+        members.Remove(hero);
+    }
 }

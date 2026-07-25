@@ -3018,7 +3018,7 @@ MonoBehaviour:
     power: 0
     prefabID: 0
     normalPrice: 0
-  shieldHand: {fileID: 0}
+  shieldHand: {fileID: 483062}
   shieldobj: {fileID: 0}
   defensePower: 0
   weapon:
@@ -3029,7 +3029,7 @@ MonoBehaviour:
     power: 0
     prefabID: 0
     normalPrice: 0
-  weaponHand: {fileID: 0}
+  weaponHand: {fileID: 496550}
   weaponobj: {fileID: 0}
   weaponPower: 0
   exp: 0
